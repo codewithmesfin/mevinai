@@ -31,6 +31,7 @@ export const register = createAsyncThunk(
         try {
             const data = await api.registerUser(userData, '/signup');
             setToken(data.data.token);
+
             return data.data;
         } catch (error: any) {
             return rejectWithValue(error.response?.data?.message || 'Registration failed');
@@ -51,6 +52,19 @@ export const login = createAsyncThunk(
     }
 );
 
+
+export const logout = createAsyncThunk(
+    'user/logout',
+    async (_, { rejectWithValue }) => {
+        try {
+            // Remove the token
+            removeToken();
+            return true;
+        } catch (error: any) {
+            return rejectWithValue(error.message || 'Logout failed');
+        }
+    }
+);
 
 
 
@@ -155,6 +169,22 @@ const userSlice = createSlice({
                 state.domainExists = action.payload; // Set the domain existence status
             })
             .addCase(checkDomainNameExistance.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.payload as string;
+            })
+            .addCase(logout.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(logout.fulfilled, (state) => {
+                state.status = 'succeeded';
+                state.user = null; // Clear user data
+                state.isAuthenticated = false; // Reset authentication status
+                state.userSites = null; // Clear user-specific sites
+                state.emailExists = false; // Reset email existence state
+                state.domainExists = false; // Reset domain existence state
+                state.error = null; // Clear any existing errors
+            })
+            .addCase(logout.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.payload as string;
             });

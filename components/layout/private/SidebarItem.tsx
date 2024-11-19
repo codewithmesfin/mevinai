@@ -1,6 +1,6 @@
 "use client"
 
-import { removeToken } from '@/lib/auth';
+
 import {
     AdjustmentsHorizontalIcon,
     ArrowRightEndOnRectangleIcon,
@@ -13,9 +13,14 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { logout } from "@/redux/slices/userSlice";
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from "@/redux/store";
 
 
 export default function SidebarItem() {
+    const dispatch = useDispatch<AppDispatch>();
+
     const pathname = usePathname()
 
     const navigations =
@@ -70,7 +75,7 @@ export default function SidebarItem() {
     const router = useRouter();
 
     const logoutUser = () => {
-        removeToken()
+        dispatch(logout());
         router.push('/user/login');
     }
 

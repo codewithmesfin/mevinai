@@ -1,7 +1,6 @@
 'use client';
 
 import { Brand, Button, PasswordField, TextField } from "@/components";
-import LoadingIndicator from "@/components/LoadingIndicator";
 import show from "@/lib/toast";
 import validate from "@/lib/validator";
 import { login } from "@/redux/slices/userSlice";

@@ -13,7 +13,7 @@ import { Brand, LinkButton } from "@/components";
 export default function SMPrivateNavbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    return <div className="fixed z-50 w-full border-b bg-gray-50 md:hidden">
+    return <div className="fixed z-10 w-full border-b bg-gray-50 md:hidden">
         <nav className='w-[95%] mx-auto px-2 py-6 flex flex justify-between items-center'>
             <button
                 type="button"
