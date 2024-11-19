@@ -1,0 +1,67 @@
+import { reasons } from "@/data";
+import LinkButton from "../button/LinkButton";
+import { AdjustmentsHorizontalIcon, ArrowPathIcon } from "@heroicons/react/24/outline";
+import OutlineLink from "../button/OutlineLink";
+
+
+
+export default function Reasons() {
+    return <div className="w-[90%] mx-auto my-3 bg-gray-50">
+        <div className="py-24">
+            <div className="py-2">
+                <h1 className="text-gray-900 md:text-center text-4xl md:text-6xl font-semibold">
+                    Why Mevinai 
+                </h1>
+                <p className="text-center md:text-lg text-gray-600 py-3">
+                    We make it easy to secure accommodation and even easier for guests to pick and pay for rooms
+                </p>
+            </div>
+            <div className="md:py-4">
+                <div className="md:flex justify-center md:space-x-10">
+                    {
+                        reasons.map((item, index) => <div key={item.title} 
+                        className="w-full rounded-xl border md:border-none p-4 md:p-0 my-4 md:my-0">
+                            <div className="p-3 md:p-5">
+                                <div className="text-2xl">
+                                    {item.icon}
+                                </div>
+                                <h1 className="text-lg md:text-xl text-black font-bold">
+                                    {item.title}
+                                </h1>
+                                <p className="text-gray-600 py-2">
+                                    {item.subtitle}
+                                </p>
+                            </div>
+                        </div>)
+                    }
+                </div>
+                <div className="sm:flex justify-center items-center sm:space-x-2 md:space-x-10">
+                    <div className='py-3 w-full md:max-w-[240px]'>
+                        <LinkButton
+                            title="Luanch your SaaS now"
+                            leftIcon={
+                                <ArrowPathIcon path="right"
+                                    className="h-5 w-5"
+                                    strokeWidth={2}
+                                />
+                            }
+                            href={"/user/signup"}
+                            py="py-3"
+                        />
+                    </div>
+                    <div className='py-3 w-full md:max-w-[230px]'>
+                        <OutlineLink href="/marketplace" title={"Explore marketplace"}
+                            py="py-3"
+                            leftIcon={
+                                <AdjustmentsHorizontalIcon
+                                    path="right"
+                                    className="h-5 w-5"
+                                    strokeWidth={2}
+                                />}
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
