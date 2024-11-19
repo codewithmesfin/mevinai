@@ -24,7 +24,7 @@ export default function SMPrivateNavbar() {
             </button>
             <Brand />
             <div>
-            <LinkButton title={'Marketplace'} href={'/marketplace'} showNextIcon />
+            <LinkButton title={'Marketplace'} href={'/apps'} showNextIcon />
             </div>
         </nav>
         <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

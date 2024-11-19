@@ -96,7 +96,7 @@ export default function Apps() {
         }} app={app}
             siteName={user?.siteName || ""}
         />
-        <div className="w-[90%] h-screen md:max-w-4xl mx-auto">
+        <div className="w-[90%] md:max-w-4xl mx-auto">
             <div>
                 <h1 className="text-gray-700 font-extrabold text-2xl md:text-4xl">Get Frappe apps for free</h1>
                 <p className="text-gray-600 py-2">
