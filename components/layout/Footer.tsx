@@ -8,7 +8,7 @@ import React from 'react'
 export default function Footer() {
     const pathname = usePathname()
     return (
-        <div className="bg-white border-t z-10 bottom-0 top-auto">
+        <footer className="bg-white border-t z-10">
             <div className="mx-auto md:w-[100%] py-8">
                 <div className="md:flex md:justify-evenly">
                     <div className="flex flex-wrap justify-center px-3">
@@ -32,6 +32,6 @@ export default function Footer() {
                     </h1>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }

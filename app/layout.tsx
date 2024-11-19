@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <AppProvider>
         <body
-          className={`bg-gray-50 h-screen ${geistSans.variable} ${geistMono.variable}`}
+          className={`bg-gray-50 ${geistSans.variable} ${geistMono.variable}`}
         >
           <CustomLayout>{children} </CustomLayout>
           <ToastContainer
