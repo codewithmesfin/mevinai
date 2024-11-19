@@ -15,11 +15,11 @@ interface PROPS {
 }
 export default function ERPNextInfo({ site, user }: PROPS) {
     const configuration = {
-        saas: (site!.status == "site created") && (site!.nginx && site!.nginx!.status == "active") && (site!.ssl && site!.ssl!.status == "active"),
-        site: site!.status == "site created",
-        nginx: site!.nginx && site!.nginx!.status == "active",
-        ssl: site!.ssl && site!.ssl!.status == "active",
-        erpnext: site!.apps && site!.apps.length > 0 && site!.apps.includes("erpnext")
+        saas: (site?.status == "site created") && (site!.nginx && site!.nginx!.status == "active") && (site!.ssl && site!.ssl!.status == "active"),
+        site: site?.status == "site created",
+        nginx: site?.nginx && site!.nginx!.status == "active",
+        ssl: site?.ssl && site!.ssl!.status == "active",
+        erpnext: site?.apps && site!.apps.length > 0 && site!.apps.includes("erpnext")
     }
 
     const [installing, setInstalling] = useState(false)

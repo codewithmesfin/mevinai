@@ -16,10 +16,10 @@ interface PROPS {
 }
 export default function SiteInfo({ site, user }: PROPS) {
     const configuration = {
-        saas: (site!.status == "site created") && (site!.nginx && site!.nginx!.status == "active") && (site!.ssl && site!.ssl!.status == "active"),
-        site: site!.status == "site created",
-        nginx: site!.nginx && site!.nginx!.status == "active",
-        ssl: site!.ssl && site!.ssl!.status == "active"
+        saas: (site?.status == "site created") && (site!.nginx && site!.nginx!.status == "active") && (site!.ssl && site!.ssl!.status == "active"),
+        site: site?.status == "site created",
+        nginx: site?.nginx && site!.nginx!.status == "active",
+        ssl: site?.ssl && site!.ssl!.status == "active"
     }
 
     const [installing, setInstalling] = useState(false)

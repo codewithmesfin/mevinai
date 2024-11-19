@@ -15,10 +15,10 @@ interface PROPS {
 }
 export default function SSLInfo({ site, user }: PROPS) {
     const configuration = {
-        saas: (site!.status == "site created") && (site!.nginx && site!.nginx!.status == "active") && (site!.ssl && site!.ssl!.status == "active"),
-        site: site!.status == "site created",
-        nginx: site!.nginx && site!.nginx!.status == "active",
-        ssl: site!.ssl && site!.ssl!.status == "active"
+        saas: (site?.status == "site created") && (site!.nginx && site!.nginx!.status == "active") && (site!.ssl && site!.ssl!.status == "active"),
+        site: site && site!.status == "site created",
+        nginx: site?.nginx && site!.nginx!.status == "active",
+        ssl: site?.ssl && site!.ssl!.status == "active"
     }
 
     const [installing, setInstalling] = useState(false)
@@ -49,11 +49,11 @@ export default function SSLInfo({ site, user }: PROPS) {
             </div>
             <div>
                 <h2 className="text-base font-semibold text-gray-900">
-                   SSL Certificate Installed.
+                    SSL Certificate Installed.
                 </h2>
                 <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                       SSL Certificate has been installed to your site {user?.siteName} successfully to ensure secure connections with SSL encryption for user trust..
+                        SSL Certificate has been installed to your site {user?.siteName} successfully to ensure secure connections with SSL encryption for user trust..
                     </p>
                 </div>
             </div>
