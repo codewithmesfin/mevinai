@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Footer from './Footer';
+import { removeToken } from '@/lib/auth';
 
 
 
@@ -29,10 +30,10 @@ const CustomLayout = ({ children }: PROPS) => {
 
     useEffect(() => {
         setIsAuthenticated(isAuthenticated)
-        // if (!isAuthenticated && pathname!="/") {
-        //     removeToken()
-        //     router.push('/user/login'); // Redirect to home if already authenticated
-        // }
+        if (!isAuthenticated && pathname!="/") {
+            removeToken()
+            router.push('/user/login'); // Redirect to home if already authenticated
+        }
     }, [isAuthenticated]);
    
     
