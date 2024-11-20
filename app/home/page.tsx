@@ -23,7 +23,7 @@ import { CheckBadgeIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
     const dispatch = useDispatch<AppDispatch>();
-    const { status, error } = useSelector((state: RootState) => state.saas);
+    const { status, error } = useSelector((state: RootState) => state.user);
     const [user, setUser] = useState<USER>()
     const [site, setSite] = useState<SITE>()
     const router = useRouter()
@@ -113,7 +113,7 @@ export default function Home() {
                                         <CheckBadgeIcon aria-hidden="true" className="size-10 text-green-600" />
                                     </div>
                                     <div>
-                                        <h1 className="font-bold text-lg">SaaS Configured</h1>
+                                        <h1 className="font-bold text-gray-800 text-lg">SaaS Configured</h1>
                                         <p className="text-gray-600">Your Frappe site <span className="text-blue-600">{user?.siteName}</span> has been created and configured successfully</p>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@ export default function Home() {
                     <div className="w-full md:w-1/2">
                         <div className="bg-white border border-gray-200 rounded-xl p-5 md:p-10">
                             <div className="pb-2">
-                                <h1 className="font-bold text-lg">Configuration detail</h1>
+                                <h1 className="font-bold text-gray-700 text-lg">Configuration detail</h1>
                             </div>
                             <div className="py-2">
                                 {configuration.site &&

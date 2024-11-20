@@ -12,10 +12,10 @@ import { guides } from "@/data";
 export default function UserGuide() {
 
 
-    return <div className="py-32 md:py-32">
+    return <div className="py-16 md:py-32">
         <div className="w-[90%] md:max-w-4xl mx-auto">
             <div>
-                <h1 className="text-gray-700 font-extrabold text-center text-5xl md:text-6xl">
+                <h1 className="text-gray-700 font-extrabold text-center text-4xl md:text-6xl">
                     Welcome to Mevinai
                 </h1>
                 <div className="py-6">
