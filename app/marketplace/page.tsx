@@ -75,7 +75,7 @@ export default function Marketplace() {
                                     // setModalOpen(true)
                                     // setApp(item)
                                 }}
-                                className="bg-white border border-gray-200 cursor-pointer hover:border-blue-400 rounded-xl p-5">
+                                className="bg-white border border-gray-200 cursor-pointer rounded-xl p-5">
                                 <div className="pb-1">
                                     <img src={item.image} alt=""
                                         className="w-8 h-8 rounded"
