@@ -31,9 +31,9 @@ export default function SidebarItem() {
                 href: "/home",
             },
             {
-                title: "Introduction",
-                icon: <PencilSquareIcon className="h-4 w-4" />,
-                href: "/introduction",
+                title: "User Guide",
+                icon: <FolderIcon className="h-4 w-4" />,
+                href: "/user-guide",
             },
             {
                 title: "Configuration",
@@ -44,21 +44,6 @@ export default function SidebarItem() {
                 title: "Marketplace",
                 icon: <AdjustmentsHorizontalIcon className="h-4 w-4" />,
                 href: "/apps",
-            },
-            {
-                title: "User Guide",
-                icon: <FolderIcon className="h-4 w-4" />,
-                href: "/user-guide",
-            },
-            {
-                title: "Billings",
-                icon: <CreditCardIcon className="h-4 w-4" />,
-                href: "/billing",
-            },
-            {
-                title: "Notifications",
-                icon: <BellAlertIcon className="h-4 w-4" />,
-                href: "/notifications",
             },
             {
                 title: "Support",
