@@ -88,7 +88,7 @@ export default function Marketplace() {
                                 <div className='py-2'>
                                     <Link href={`${item?.href}`}
                                         target='_blank'
-                                        className="text-blue-600 text-sm flex justify-center md:justify-start items-center space-x-4"
+                                        className="text-blue-600 text-sm flex justify-start items-center space-x-4"
                                     >
                                         <span>Learn more</span>
                                         <ArrowRightIcon className="w-4 h-4" />
