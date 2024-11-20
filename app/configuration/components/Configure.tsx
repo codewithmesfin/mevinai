@@ -30,6 +30,9 @@ export default function Configure({ siteName, user }: PROPS) {
                     if (prevProgress < 94) {
                         return prevProgress + 1; // Adjust increment for smoother/slower/faster effect
                     }
+                    if (prevProgress >= 95) {
+                        setConfiguration({ ...configuration, status: "Finalizing your SaaS ..." })
+                    }
                     return prevProgress;
                 });
             }, 1250); // Adjust interval time for speed of increment
