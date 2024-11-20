@@ -1,11 +1,8 @@
 
 "use client"
 
-import LoadingIndicator from "@/components/LoadingIndicator";
-import { APP_INFO } from "@/types/app";
 import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { LinkButton } from "@/components";
 import { guides } from "@/data";
 
 

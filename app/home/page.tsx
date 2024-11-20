@@ -6,17 +6,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from "@/redux/store";
 import { getUserSites } from "@/redux/slices/userSlice";
 import LoadingIndicator from "@/components/LoadingIndicator";
-import show from "@/lib/toast";
 import { SITE, USER } from "@/types/user";
 import { useRouter } from "next/navigation";
 import { getUserApps } from "@/redux/slices/saasSlice";
 import { APP_INFO } from "@/types/app";
 import Link from "next/link";
 import { modules } from "@/data";
-import SiteInfo from "../configuration/components/SiteInfo";
-import NGINXInfo from "../configuration/components/NGINXInfo";
-import SSLInfo from "../configuration/components/SSLInfo";
-import ERPNextInfo from "../configuration/components/ERPNextInfo";
 import { Greeting, LinkButton } from "@/components";
 import { CheckBadgeIcon } from "@heroicons/react/24/outline";
 

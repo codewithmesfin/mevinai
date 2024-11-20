@@ -1,8 +1,6 @@
 "use client"
 
 
-
-
 interface PROPS {
     name: string
 }
