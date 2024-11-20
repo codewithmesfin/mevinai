@@ -7,8 +7,8 @@ import { Brand, LinkButton, OutlineLink } from '@/components'
 
 export default function Intro() {
     return <>
-        <div>
-            <div className="w-[90%] md:max-w-4xl mx-auto">
+        <div className="bg-gray-50">
+            <div className="w-[90%] md:max-w-4xl mx-auto pt-32">
                 <div className="flex justify-center items-center space-x-3 py-6">
                     <div className='rounded-full bg-[#e9f4ff] text-blue-500 py-3 px-10'>
                         <h1>All in one Software as a Service</h1>

@@ -9,7 +9,8 @@ interface PROPS {
     href: string
     borderColor?: string,
     leftIcon?: any,
-    py?: string
+    py?: string,
+    openOnOtherTab?:boolean
 }
 
 export default function LinkButton({
@@ -20,10 +21,12 @@ export default function LinkButton({
     href,
     borderColor = 'border-[#1677FF]',
     leftIcon,
-    py = "py-2"
+    py = "py-2",
+    openOnOtherTab=false
 }: PROPS) {
     return <Link
         href={href}
+        target={openOnOtherTab?'_blank':'_self'}
         className={`w-full ${bgColor} ${borderColor} ${textColor} ${py} flex justify-center md:justify-evenly items-center space-x-2 rounded-xl border hover:border-green-500 hover:bg-green-500 hover:text-white px-4`}
     >
         {leftIcon}
