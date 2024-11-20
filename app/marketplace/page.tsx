@@ -45,10 +45,6 @@ export default function Marketplace() {
     }
 
 
-    if (loadingApps)
-        return (<div className='flex space-x-4 justify-center items-center h-screen'>
-            <LoadingIndicator />
-        </div>)
 
 
     return <div className="py-32 md:py-32">
@@ -66,8 +62,11 @@ export default function Marketplace() {
                 </div>
             </div>
             <section className="py-8 md:py-10">
-                <div className="">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                {loadingApps ?
+                    <div className='flex space-x-4 justify-center items-center h-full p-16'>
+                        <LoadingIndicator />
+                    </div>
+                    : <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                         {
                             apps.map((item: APP_INFO) => <div
                                 key={item.title}
@@ -96,9 +95,7 @@ export default function Marketplace() {
                                 </div>
                             </div>)
                         }
-                    </div>
-
-                </div>
+                    </div>}
             </section>
 
         </div>
