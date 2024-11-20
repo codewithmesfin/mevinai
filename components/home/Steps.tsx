@@ -34,7 +34,7 @@ export default function Steps() {
                     <div className="py-6">
                         <h1 className="text-gray-700">
                             Deploying ERPNext and other Frappe apps with Mevinai is a seamless process.
-                            There's no need for software engineers or DevOps professionals—just get started
+                            {"There's"} no need for software engineers or DevOps professionals—just get started
                             and launch your ERPNext SaaS in under two minutes!
                         </h1>
                         <div className="py-3">
