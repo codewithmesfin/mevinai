@@ -22,6 +22,8 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: 'Mevinai',
   description: 'Mevinai is a small team of Experienced Software Engineers.',
+  keywords: 'mevinai, frappe,erpnext, ethiopia, innovation',
+  robots: 'index, follow',
 };
 
 

@@ -11,6 +11,8 @@ interface UserState {
     userSites: any[] | null;
     emailExists: boolean; // State to track email existence
     domainExists: boolean; // State to track domain existence
+    emailVerified: boolean; // State to track email verification status
+    passwordReset: boolean; // State to track password reset status
 }
 
 const initialState: UserState = {
@@ -21,6 +23,8 @@ const initialState: UserState = {
     userSites: null,
     emailExists: false, // Initialize with false
     domainExists: false, // Initialize with false
+    emailVerified: false, // Initialize with false
+    passwordReset: false, // Initialize with false
 };
 
 // Async actions
@@ -107,6 +111,33 @@ export const checkDomainNameExistance = createAsyncThunk(
     }
 );
 
+// Verify email
+export const verifyEmail = createAsyncThunk(
+    'user/verifyEmail',
+    async (email: string, { rejectWithValue }) => {
+        try {
+            const response = await api.create({ email}, '/reset-password-request');
+            return response.data;
+        } catch (error: any) {
+            return rejectWithValue(error.response?.data?.message || 'Email verification failed');
+        }
+    }
+);
+
+// Reset password
+export const resetPassword = createAsyncThunk(
+    'user/resetPassword',
+    async ({ password, token }: { password: string, token: string }, { rejectWithValue }) => {
+        try {
+            const response = await api.create({ password }, `/reset-password/${token}`);
+            setToken(response.data.token); // Save the token if login is successful
+            return response.data;
+        } catch (error: any) {
+            return rejectWithValue(error.response?.data?.message || 'Password reset failed');
+        }
+    }
+);
+
 // User slice
 const userSlice = createSlice({
     name: 'user',
@@ -185,6 +216,30 @@ const userSlice = createSlice({
                 state.error = null; // Clear any existing errors
             })
             .addCase(logout.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.payload as string;
+            })
+
+            .addCase(verifyEmail.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(verifyEmail.fulfilled, (state) => {
+                state.status = 'succeeded';
+                state.emailVerified = true; // Mark email as verified
+            })
+            .addCase(verifyEmail.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.payload as string;
+            })
+            .addCase(resetPassword.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(resetPassword.fulfilled, (state) => {
+                state.status = 'succeeded';
+                state.passwordReset = true; // Mark password as reset
+                state.isAuthenticated = true;
+            })
+            .addCase(resetPassword.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.payload as string;
             });

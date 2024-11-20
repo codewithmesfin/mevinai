@@ -30,27 +30,33 @@ export default function Steps() {
                 </div>
             </div>
             <div className="md:flex items-center justify-center md:space-x-10">
-                <div >
+                <div className="w-full md:w-2/5">
                     <div className="py-6">
-                        {
-                            steps.map((item, index) => <div key={item.title}>
-                                <div className="flex items-center space-x-2 py-2">
-                                    <div className="text-3xl md:text-4xl">{item.icon}</div>
-                                    <div>
-                                        <h1 className="text-lg md:text-xl text-gray-900 font-semibold">
-                                            {item.title}
-                                        </h1>
-                                        <p className="text-gray-600 py-1">
-                                            {item.subtitle}
-                                        </p>
+                        <h1 className="text-gray-700">
+                            Deploying ERPNext and other Frappe apps with Mevinai is a seamless process.
+                            There's no need for software engineers or DevOps professionals—just get started
+                            and launch your ERPNext SaaS in under two minutes!
+                        </h1>
+                        <div className="py-3">
+                            {
+                                steps.map((item, index) => <div key={item.title}>
+                                    <div className="flex space-x-2 py-3">
+                                        <div className="text-lg md:text-xl">{index+1}.</div>
+                                        <div>
+                                            <h1 className="text-gray-800 font-semibold">
+                                                {item.title}
+                                            </h1>
+                                            <p className="text-gray-700 py-1">
+                                                {item.subtitle}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>)
-                        }
-
+                                </div>)
+                            }
+                        </div>
                     </div>
                 </div>
-                <div>
+                <div className="w-full md:w-2/5">
                     <Image alt="mevinai"
                         src={"/images/img1.png"}
                         height={600} width={600}

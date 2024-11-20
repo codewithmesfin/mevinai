@@ -9,7 +9,7 @@ export default function MainBrand(){
     <Image
       alt="logo"
       src="/logo.png"
-      className="h-12 w-12 rounded-xl"
+      className="h-12 w-12 rounded-full"
       width={600} height={600}
     />
     <span className="text-gray-900 text-lg md:text-xl font-medium">Mevinai</span>

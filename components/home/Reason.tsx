@@ -17,7 +17,7 @@ export default function Reasons() {
                 </p>
             </div>
             <div className="md:py-4">
-                <div className="md:flex justify-center md:space-x-10">
+                <div className="md:flex justify-center md:space-x-6">
                     {
                         reasons.map((item, index) => <div key={item.title} 
                         className="w-full rounded-xl border md:border-none p-4 md:p-0 my-4 md:my-0">
@@ -25,10 +25,10 @@ export default function Reasons() {
                                 <div className="text-2xl">
                                     {item.icon}
                                 </div>
-                                <h1 className="text-lg md:text-xl text-black font-bold">
+                                <h1 className="md:text-lg text-black font-bold">
                                     {item.title}
                                 </h1>
-                                <p className="text-gray-600 py-2">
+                                <p className="text-gray-600 py-1">
                                     {item.subtitle}
                                 </p>
                             </div>

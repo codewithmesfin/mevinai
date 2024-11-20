@@ -12,7 +12,7 @@ export default function Features() {
                     >
                         <div className="h-full">
                             <div className="text-3xl">{item.icon}</div>
-                            <h1 className="text-lg md:text-xl text-black font-bold">
+                            <h1 className="text-lg md:text-xl text-gray-900 font-bold">
                                 {item.title}
                             </h1>
                             <p className="text-gray-600 py-2">

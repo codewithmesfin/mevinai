@@ -44,7 +44,7 @@ const CustomLayout = ({ children }: PROPS) => {
       {!isAuthPage && <PublicNavbar />}
       {children}
 
-      <Footer />
+      {!isAuthPage && <Footer />}
     </>
 
 
