@@ -41,7 +41,7 @@ export default function Steps() {
                             {
                                 steps.map((item, index) => <div key={item.title}>
                                     <div className="flex space-x-2 py-3">
-                                        <div className="text-lg md:text-xl">{index+1}.</div>
+                                        <div className="text-lg md:text-xl text-blue-900">{index+1}.</div>
                                         <div>
                                             <h1 className="text-gray-800 font-semibold">
                                                 {item.title}
