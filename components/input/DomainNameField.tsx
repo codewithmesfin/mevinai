@@ -23,7 +23,9 @@ interface PROPS {
     onShowPassword?: any
     autoComplete?: string
     isRequired?: boolean,
-    domainName: string
+    domainName: string,
+    disabled?:boolean
+
 }
 
 export default function DomainNameField({
@@ -35,7 +37,7 @@ export default function DomainNameField({
     onChange,
     onInput,
     autoComplete, isRequired = false,
-    domainName, loading
+    domainName, loading,disabled=false
 }: PROPS) {
     return <div>
         <label htmlFor={type} className="block text-sm text-gray-700">
@@ -45,7 +47,7 @@ export default function DomainNameField({
             <div className={`border  ${error ? 'border-red-600' : 'border-gray-200'} rounded-xl px-4 flex items-center space-x-3 md:space-x-3`}>
             <p className="text-gray-600 italic1">https://</p>
                 <input
-                
+                disabled={disabled}
                     type={type}
                     required={isRequired}
                     autoComplete={autoComplete}

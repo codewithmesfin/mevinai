@@ -59,8 +59,8 @@ export default function SidebarItem() {
 
     const router = useRouter();
 
-    const logoutUser = () => {
-        dispatch(logout());
+    const logoutUser = async() => {
+       await dispatch(logout());
         router.push('/user/login');
     }
 
