@@ -6,7 +6,7 @@ import OutlineLink from "../button/OutlineLink";
 
 
 export default function Reasons() {
-    return <div className="w-[90%] mx-auto my-3 bg-gray-50">
+    return <div className="w-[90%] mx-auto my-3 bg-white">
         <div className="py-24">
             <div className="py-2">
                 <h1 className="text-gray-900 md:text-center text-4xl md:text-6xl font-semibold">

@@ -11,7 +11,7 @@ export default function About() {
     return (
         <>
             <section
-                className="bg-gray-50 flex items-center">
+                className="bg-white flex items-center">
                 <div className="w-[95%] md:w-[95%] mx-auto pt-32 md:pt-48 pb-10">
                     <div className="md:flex md:space-x-10 justify-evenly items-center">
                         <div className="w-full md:w-2/5">

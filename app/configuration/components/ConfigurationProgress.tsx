@@ -29,7 +29,7 @@ export default function ConfigurationProgress({
         <Dialog open={open} onClose={() => { }} className="relative z-10">
             <DialogBackdrop
                 transition
-                className="fixed inset-0 bg-gray-500/75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+                className="fixed inset-0 bg-white0/75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
             />
 
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
@@ -70,7 +70,7 @@ export default function ConfigurationProgress({
                             </div>
                         </div>
 
-                        {(failed || succeed) && <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        {(failed || succeed) && <div className="bg-white px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                             {succeed && <Link
                                 onClick={() => {
                                     setOpen(false)
@@ -86,7 +86,7 @@ export default function ConfigurationProgress({
                                 disabled={failed}
                                 data-autofocus
                                 onClick={() => setOpen(false)}
-                                className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                                className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white sm:mt-0 sm:w-auto"
                             >
                                 Cancel
                             </button>}

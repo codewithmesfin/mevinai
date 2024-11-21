@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3BottomLeftIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { publicNavitems } from '@/data'
 import Link from 'next/link'
@@ -16,7 +16,7 @@ export default function PublicNavbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <div className="fixed bg-gray-50  inset-x-0 top-0 z-50">
+        <div className="fixed bg-white  inset-x-0 top-0 z-50">
             <nav aria-label="Global" className="w-full md:w-[95%] lg:max-w-4xl mx-auto flex items-center justify-between p-6 lg:px-8">
 
                 <div className="flex lg:hidden">
@@ -24,7 +24,7 @@ export default function PublicNavbar() {
                         onClick={() => setMobileMenuOpen(true)}
                         className="inline-flex items-center justify-center rounded-md text-gray-700"
                     >
-                        <Bars3Icon aria-hidden="true" className="size-6" />
+                        <Bars3BottomLeftIcon aria-hidden="true" className="size-8" />
                     </button>
                 </div>
 

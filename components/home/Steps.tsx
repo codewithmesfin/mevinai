@@ -5,7 +5,7 @@ import { ArrowPathIcon } from "@heroicons/react/24/outline";
 
 export default function Steps() {
     return <div>
-        <div className="w-[90%] mx-auto my-3 bg-gray-50">
+        <div className="w-[90%] mx-auto my-3 bg-white">
             <div className="py-3 w-full md:max-w-4xl mx-auto">
                 <h1 className="text-gray-900 text-center text-3xl md:text-6xl font-semibold">
                     <span className="text-[#1677FF] md:pr-2">3 simple steps</span>

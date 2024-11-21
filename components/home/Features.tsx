@@ -3,7 +3,7 @@ import { features } from "@/data";
 
 
 export default function Features() {
-    return <div className="my-1 md:my-16 py-8 md:py-16 bg-gray-50">
+    return <div className="my-1 md:my-16 py-8 md:py-16 bg-white">
         <div className=" w-[90%] md:max-w-4xl mx-auto">
             <div className='md:flex md:justify-center md:space-x-10'>
                 {

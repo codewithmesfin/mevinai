@@ -1,6 +1,6 @@
 "use client"
 
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
@@ -13,14 +13,14 @@ import { Brand, LinkButton } from "@/components";
 export default function SMPrivateNavbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    return <div className="fixed z-10 w-full border-b bg-gray-50 md:hidden">
+    return <div className="fixed z-10 w-full border-b bg-white md:hidden">
         <nav className='w-[95%] mx-auto px-2 py-6 flex flex justify-between items-center'>
             <button
                 type="button"
                 className="-m-2.5 lg:hidden inline-flex items-center justify-center rounded-md p-2.5 text-gray-900"
                 onClick={() => setMobileMenuOpen(true)}
             >
-                <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                <Bars3BottomLeftIcon aria-hidden="true" className="size-8" />
             </button>
             <Brand />
             <div>
