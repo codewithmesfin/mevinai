@@ -25,7 +25,7 @@ export default function TextField({
     type, value,
     error,
     onChange, onLeave,
-    autoComplete, isRequired = false,
+    autoComplete = "off", isRequired = false,
     disabled = false,
     min
 }: PROPS) {
@@ -35,6 +35,7 @@ export default function TextField({
         </label>
         <div className="mt-2">
             <input
+
                 min={min}
                 type={type}
                 required={isRequired}

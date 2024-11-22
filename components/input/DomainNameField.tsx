@@ -36,7 +36,7 @@ export default function DomainNameField({
     available = false,
     onChange,
     onInput,
-    autoComplete, isRequired = false,
+    autoComplete = "off", isRequired = false,
     domainName, loading,disabled=false
 }: PROPS) {
     return <div>

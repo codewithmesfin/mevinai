@@ -24,7 +24,7 @@ export default function PasswordField({
     value,
     error,
     onChange,
-    autoComplete,
+    autoComplete = "off",
     isRequired = false,
 }: PROPS) {
     const [showPassword, setShowPassword] = useState(true)
