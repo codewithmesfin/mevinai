@@ -78,16 +78,14 @@ export default function Support() {
                     </div>
                     <div className="py-4">
                         <div className="md:flex justify-center items-center md:space-x-10">
-                        {
-                            companyInfo.map((item: any, index: number) => <div key={item.title}>
-                                <h1 className="text-gray-700 font-semibold md:text-lg py-2">{item.title}</h1>
-                                <ul className="list-disc ml-4 md:ml-6">
-                                    {item.values.map((value: string) => <li key={value} className="py-1">
+                            {
+                                companyInfo.map((item: any, index: number) => <div key={item.title}>
+                                    <h1 className="text-gray-700 font-semibold md:text-lg py-2">{item.title}</h1>
+                                    {item.values.map((value: string) => <div key={value} className="py-1">
                                         <Link href={`${item.stratWith}${value}`} className="text-blue-600">{value} </Link>
-                                    </li>)}
-                                </ul>
-                            </div>)
-                        }
+                                    </div>)}
+                                </div>)
+                            }
                         </div>
                     </div>
                     <div className="py-10">

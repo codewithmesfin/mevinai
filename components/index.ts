@@ -18,6 +18,7 @@ import Sidebar from "./layout/private/Sidebar";
 import SidebarItem from "./layout/private/SidebarItem";
 import SMPrivateNavbar from "./layout/private/SMNavbar";
 import Greeting from "./greating/Greating";
+import SwitchButton from "./button/SwitchButton";
 
 
 
@@ -27,5 +28,5 @@ export {
     LinkButton, Intro, Features,
     Reasons,Steps,TextField,DomainNameField,PasswordField,
     PrivateLayout,Sidebar,SidebarItem,SMPrivateNavbar,
-    Greeting
+    Greeting,SwitchButton
 }
