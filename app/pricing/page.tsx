@@ -73,7 +73,7 @@ export default function Pricing() {
         <div className="py-24 md:py-32">
             <div className='mx-auto py-6'>
                 <div className='py-4 mx-auto w-[90%] md:max-w-4xl'>
-                    <h1 className={`text-gray-600 text-center text-3xl md:text-6xl font-bold pb-3`}>
+                    <h1 className={`text-gray-600 text-center text-4xl md:text-6xl font-bold pb-3`}>
                         <span className='text-[#1677FF]'>Usage-tiered</span> Pricing
                     </h1>
                     <p className={`text-gray-600  md:text-lg text-center py-3`}>
