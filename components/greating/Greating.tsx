@@ -20,7 +20,7 @@ export default function Greeting({ name = "Customer" }: PROPS) {
        greeting='Good Evening'
     }
     return <h1
-        className={`py-3 text-center font-extrabold text-3xl md:text-3xl text-blue-900`}>
+        className={`py-3 text-center font-extrabold text-xl md:text-3xl text-blue-900`}>
         {greeting} {name}!
     </h1>
 }

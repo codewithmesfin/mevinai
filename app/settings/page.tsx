@@ -1,88 +1,90 @@
 'use client';
 
-import { Brand, Button, DomainNameField, PasswordField, TextField } from "@/components";
-import LoadingIndicator from "@/components/LoadingIndicator";
+import { Button, TextField } from "@/components";
 import validate from "@/lib/validator";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from "@/redux/store";
-import { checkDomainNameExistance, checkEmailExistence } from "@/redux/slices/userSlice";
-import { register } from "@/redux/slices/userSlice";
+import { getUserSites, register, updateUserInfo } from "@/redux/slices/userSlice";
 import show from "@/lib/toast";
+import { USER } from "@/types/user";
+import { getUserId } from "@/lib/auth";
+import LoadingIndicator from "@/components/LoadingIndicator";
 
 
 export default function Settings() {
-
-    const [user, setUser] = useState<any>(null)
-    const [subdomainName, setSubDomainName] = useState("")
-    const [siteNameAvailable, setSiteNameAvailable] = useState<boolean>(false)
-    const [checkingDomainName, setCheckingDomainName] = useState<boolean>(false)
-    const [checkingEmail, setCheckingEmail] = useState<boolean>(false)
+    const [user, setUser] = useState<any>()
     const [formError, setFormError] = useState<any>(null)
-    const router = useRouter();
+    const [saving, setSaving] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(false)
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        validate.signupForm(formError)
+        validate.updateProfileForm(formError)
     }, [formError])
 
-    const { status } = useSelector((state: RootState) => state.user);
+
+
+    useEffect(() => {
+        const userId = getUserId()
+        if (userId) {
+            getUserInfo(userId)
+        }
+    }, [])
+
+
+    const getUserInfo = async (userId: string) => {
+        setLoading(true)
+        const result = await dispatch(getUserSites(userId));
+        if (result.type == "user/getUserSites/fulfilled") {
+            const usr = result.payload?.user
+            setUser(usr)
+        }
+        setLoading(false)
+    }
+
+
     const submit = async () => {
-        if (!user || (!user.firstName || !user.lastName || !user.email || !user.phone || !subdomainName || !user.password)) {
+
+        if (!user || (!user.firstName || !user.lastName || !user.email || !user.phone)) {
             show.error("Please fill all form fields with valid information!")
         }
         else {
+            setSaving(true)
             try {
-                const result = await dispatch(register({
-                    ...user,
-                    siteName: `${subdomainName}.mevinai.com`,
-                    "status": "active"
-                }));
-                if (result.type == "user/register/rejected")
-                    show.error(`Unable to create your account. Try again.`)
-                if (result.type == "user/register/fulfilled") {
-                    show.success("Congratulation! Your account has been created successfully.")
-                    router.push('/home');
+                const userId = getUserId()
+                const result = await dispatch(updateUserInfo({ ...user, _id: userId }));
+                console.log(result)
+                if (result.type == "user/updateUserInfo/rejected")
+                    show.error(`Unable to update your profile. Try again.`)
+                if (result.type == "user/updateUserInfo/fulfilled") {
+                    const usr = result?.payload?.user
+                    show.success("Congratulation! Your profile has been updated successfully.")
+                    setUser(usr);
                 }
+                setSaving(false)
             } catch (err) {
-                show.error(`Unable to create your account. Try again.`)
+                show.error(`Unable to update your prifle. Try again.`)
+                setSaving(false)
             }
         }
     }
 
+    if (loading)
+        return (<div className='flex space-x-4 justify-center items-center h-screen'>
+            <LoadingIndicator />
+        </div>)
 
-    const checkIfEmailIsAvailable = async (email: string) => {
-        setCheckingEmail(true)
-        if (email) {
-            const result = await dispatch(checkEmailExistence(email));
-            if (result.type == "user/checkEmailExistence/fulfilled") {
-                setFormError({ ...formError, email: result.payload?.inuse == true ? 'This email is already in use. Try with an other email.' : undefined });
-            }
-        }
-        setCheckingEmail(false)
-    };
-
-
-    const checkIfDomainIsAvailable = async (domainName: string) => {
-        setCheckingDomainName(true)
-        if (domainName) {
-            const result = await dispatch(checkDomainNameExistance(`${domainName}.mevinai.com`)); // Dispatch action to check if the email exists
-            setSiteNameAvailable(result.payload?.available == true)
-            if (result.payload?.available != true) {
-                setFormError({ ...formError, domainName: `${domainName}.mevinai.com is already taken. Try an other one.` });
-            }
-            setCheckingDomainName(false)
-        }
-    }
 
     return (
-        <div className="py-24">
+        <div className="md:py-16">
             <div className="md:ml-[140px] w-[90%] md:max-w-[85%] mx-auto">
-                <h2 className="pb-5 text-center text-lg text-gray-700">
-                    Update your profile
-                </h2>
+                <div>
+                    <h2 className="py-10 text-center text-lg md:text-6xl text-gray-900">
+                        Update your profile
+                    </h2>
+                </div>
                 <div className="w-full bg-white border border-gray-200 rounded-xl p-5">
 
                     <div >
@@ -123,7 +125,7 @@ export default function Settings() {
                                     label="Email"
                                     type="email"
                                     placeholder="Enter your email address"
-                                    onLeave={(e: string) => checkIfEmailIsAvailable(e)}
+                                    disabled
                                     onChange={(e: string) => {
                                         const input = `${e.toLowerCase()}`
                                         setUser({ ...user, email: input })
@@ -148,20 +150,22 @@ export default function Settings() {
                             </div>
                         </div>
                         <div className="mt-5 py-4 flex justify-start items-center space-x-2">
-                            <h2 className="w-[60%] md:w-[20%] text-lg text-gray-700">
+                            <h2 className="w-[70%] md:w-[20%] text-lg text-gray-700">
                                 Company Information
                             </h2>
-                            <div className="w-[40%] md:w-[80%] border-b bg-gray-400"></div>
+                            <div className="w-[30%] md:w-[80%] border-b bg-gray-400"></div>
                         </div>
                         <div className="py-1 grid grid-cols-1 md:grid-cols-3 gap-4">
 
-                           <div>
+                            <div>
                                 <TextField
                                     label="Company Name"
                                     type="text"
-                                    disabled
-                                    value={user?.siteName}
+                                    value={user?.company?.name || ""}
                                     placeholder="Enter your company name"
+                                    onChange={(e: string) => {
+                                        setUser({ ...user, company: { ...user?.company, name: e } })
+                                    }}
                                 />
                             </div>
 
@@ -169,9 +173,11 @@ export default function Settings() {
                                 <TextField
                                     label="Company Type"
                                     type="text"
-                                    disabled
-                                    value={user?.siteName}
+                                    value={user?.company?.type || ""}
                                     placeholder="e.g. Private Limited Company"
+                                    onChange={(e: string) => {
+                                        setUser({ ...user, company: { ...user?.company, type: e } })
+                                    }}
                                 />
                             </div>
 
@@ -179,19 +185,24 @@ export default function Settings() {
                                 <TextField
                                     label="Industry"
                                     type="text"
-                                    disabled
-                                    value={user?.siteName}
+                                    value={user?.company?.industry || ""}
                                     placeholder="e.g. Technology"
+                                    onChange={(e: string) => {
+                                        setUser({ ...user, company: { ...user?.company, industry: e } })
+                                    }}
                                 />
                             </div>
 
                             <div>
                                 <TextField
                                     label="Number of employees"
-                                    type="text"
-                                    disabled
-                                    value={user?.siteName}
+                                    type="number"
+                                    value={user?.company?.noOfEmployee || ""}
                                     placeholder="e.g. 10"
+                                    min="1"
+                                    onChange={(e: string) => {
+                                        setUser({ ...user, company: { ...user?.company, noOfEmployee: e } })
+                                    }}
                                 />
                             </div>
 
@@ -199,29 +210,71 @@ export default function Settings() {
                                 <TextField
                                     label="Company Website"
                                     type="text"
-                                    disabled
-                                    value={user?.siteName}
+                                    value={user?.company?.website || ""}
                                     placeholder="Enter your company website"
+                                    onChange={(e: string) => {
+                                        setUser({ ...user, company: { ...user?.company, website: e } })
+                                    }}
                                 />
                             </div>
                             <div>
                                 <TextField
                                     label="Company Email"
                                     type="text"
-                                    disabled
-                                    value={user?.siteName}
+                                    value={user?.company?.email || ""}
                                     placeholder="Enter your company email"
+                                    onChange={(e: string) => {
+                                        const input = `${e.toLowerCase()}`
+                                        setUser({ ...user, company: { ...user?.company, email: input } })
+                                        setFormError({ ...formError, company: { ...formError, email: validate.email(input) ? undefined : 'Invalid email address' } })
+                                    }}
+                                    error={formError?.company?.email}
+                                />
+                            </div>
+
+                            <div>
+                                <TextField
+                                    label="Subcity"
+                                    type="text"
+                                    value={user?.company?.subcity || ""}
+                                    placeholder="e.g. Arada"
+                                    onChange={(e: string) => {
+                                        setUser({ ...user, company: { ...user?.company, subcity: e } })
+                                    }}
+                                />
+                            </div>
+
+                            <div>
+                                <TextField
+                                    label="City"
+                                    type="text"
+                                    value={user?.company?.city || ""}
+                                    placeholder="e.g. Addis Ababa"
+                                    onChange={(e: string) => {
+                                        setUser({ ...user, company: { ...user?.company, city: e } })
+                                    }}
+                                />
+                            </div>
+                            <div>
+                                <TextField
+                                    label="Region"
+                                    type="text"
+                                    value={user?.company?.region || ""}
+                                    placeholder="e.g. Affar"
+                                    onChange={(e: string) => {
+                                        setUser({ ...user, company: { ...user?.company, region: e } })
+                                    }}
                                 />
                             </div>
 
                         </div>
 
-                        <div className="w-[90%] md:max-w-[200px] mr-auto">
+                        <div className="w-[90%] md:max-w-[200px] mr-auto mt-10">
                             <Button
-                                disabled={!validate.signupForm(formError) || status == "loading" || !siteNameAvailable}
-                                bgColor={validate.signupForm(formError) && status != "loading" && siteNameAvailable ? 'border-[#1677FF] bg-[#1677FF] hover:bg-green-500 hover:border-green-500' : 'bg-gray-400'}
-                                title={status == "loading" && !checkingDomainName && !checkingEmail ? 'Saving changes' : "Save Changes"}
-                                isLoading={status == "loading" && !checkingDomainName && !checkingEmail}
+                                disabled={!validate.updateProfileForm(formError) || saving}
+                                bgColor={validate.updateProfileForm(formError) && !saving ? 'border-[#1677FF] bg-[#1677FF] hover:bg-green-500 hover:border-green-500' : 'bg-gray-400'}
+                                title={saving ? 'Saving changes' : "Save Changes"}
+                                isLoading={saving}
                                 onclick={submit}
                             />
                         </div>

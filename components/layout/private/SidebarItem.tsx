@@ -46,11 +46,6 @@ export default function SidebarItem() {
                 href: "/apps",
             },
             {
-                title: "Support",
-                icon: <InformationCircleIcon className="h-4 w-4" />,
-                href: "/help",
-            },
-            {
                 title: "Settings",
                 icon: <Cog8ToothIcon className="h-4 w-4" />,
                 href: "/settings",

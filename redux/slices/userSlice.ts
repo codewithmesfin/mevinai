@@ -116,7 +116,7 @@ export const verifyEmail = createAsyncThunk(
     'user/verifyEmail',
     async (email: string, { rejectWithValue }) => {
         try {
-            const response = await api.create({ email}, '/reset-password-request');
+            const response = await api.create({ email }, '/reset-password-request');
             return response.data;
         } catch (error: any) {
             return rejectWithValue(error.response?.data?.message || 'Email verification failed');
@@ -134,6 +134,19 @@ export const resetPassword = createAsyncThunk(
             return response.data;
         } catch (error: any) {
             return rejectWithValue(error.response?.data?.message || 'Password reset failed');
+        }
+    }
+);
+
+// Async action for updating user information
+export const updateUserInfo = createAsyncThunk(
+    'user/updateUserInfo',
+    async (userData: Partial<USER>, { rejectWithValue }) => {
+        try {
+            const response = await api.update(userData, `/user/${userData._id}/update`); // Replace `/user/${userData._id}` with the correct API endpoint
+            return response.data; // Assuming the updated user data is returned
+        } catch (error: any) {
+            return rejectWithValue(error.response?.data?.message || 'Failed to update user information');
         }
     }
 );
@@ -240,6 +253,18 @@ const userSlice = createSlice({
                 state.isAuthenticated = true;
             })
             .addCase(resetPassword.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.payload as string;
+            })
+            
+            .addCase(updateUserInfo.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(updateUserInfo.fulfilled, (state, action) => {
+                state.status = 'succeeded';
+                state.user = { ...state.user, ...action.payload }; // Merge updated fields into user state
+            })
+            .addCase(updateUserInfo.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.payload as string;
             });

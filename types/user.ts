@@ -9,6 +9,7 @@ export interface USER {
   siteName: string;
   sites?: SITE[];
   status: string;
+  company?:any
 }
 
 

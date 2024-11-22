@@ -24,7 +24,7 @@ export default function PublicNavbar() {
                         onClick={() => setMobileMenuOpen(true)}
                         className="inline-flex items-center justify-center rounded-md text-gray-700"
                     >
-                        <Bars3BottomLeftIcon aria-hidden="true" className="size-8" />
+                        <Bars3BottomLeftIcon aria-hidden="true" className="size-6" />
                     </button>
                 </div>
 

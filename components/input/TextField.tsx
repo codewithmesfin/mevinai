@@ -15,7 +15,8 @@ interface PROPS {
     onKeyDown?: any
     autoComplete?: string
     isRequired?: boolean,
-    disabled?: boolean
+    disabled?: boolean,
+    min?: string,
 }
 
 export default function TextField({
@@ -25,7 +26,8 @@ export default function TextField({
     error,
     onChange, onLeave,
     autoComplete, isRequired = false,
-    disabled = false
+    disabled = false,
+    min
 }: PROPS) {
     return <div>
         <label htmlFor={type} className="block text-sm text-gray-700">
@@ -33,6 +35,7 @@ export default function TextField({
         </label>
         <div className="mt-2">
             <input
+                min={min}
                 type={type}
                 required={isRequired}
                 autoComplete={autoComplete}

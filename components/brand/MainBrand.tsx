@@ -9,7 +9,7 @@ export default function MainBrand() {
     <Image
       alt="logo"
       src="/logo.png"
-      className="h-12 w-12 rounded-full"
+      className="h-10 w-10 rounded-full"
       width={600} height={600}
     />
     <p className="text-gray-900 text-lg md:text-xl">

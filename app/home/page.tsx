@@ -103,13 +103,13 @@ export default function Home() {
                     <div className="w-full md:w-1/2">
                         <div className="bg-white border border-gray-200 rounded-xl p-5 md:p-10">
                             <div>
-                                <div className="flex items-center space-x-3">
+                                <div className="md:flex items-center space-x-3">
                                     <div className="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:size-12">
                                         <CheckBadgeIcon aria-hidden="true" className="size-10 text-green-600" />
                                     </div>
                                     <div>
-                                        <h1 className="font-bold text-gray-800 text-lg">SaaS Configured</h1>
-                                        <p className="text-gray-600">Your Frappe site <span className="text-blue-600">{user?.siteName}</span> has been created and configured successfully</p>
+                                        <h1 className="font-bold text-gray-800 text-lg text-center md:text-left">SaaS Configured</h1>
+                                        <p className="text-gray-600 text-center md:text-left">Your Frappe site <span className="text-blue-600">{user?.siteName}</span> has been created and configured successfully</p>
                                     </div>
                                 </div>
                                 <div className="mt-4 w-[80%] md:max-w-[200px] mx-auto">

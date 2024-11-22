@@ -63,6 +63,16 @@ const api = {
         } : undefined
         return Request.get(`${API_ROOT}${path}`, header);
     },
+    update(data:any,path: any) {
+        const token = getAcceessToken()
+        const header = token ? {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+        } : undefined
+        return Request.put(`${API_ROOT}${path}`, data, header);
+    },
 
 };
 export default api;

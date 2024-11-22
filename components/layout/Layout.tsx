@@ -29,10 +29,6 @@ const CustomLayout = ({ children }: PROPS) => {
 
   useEffect(() => {
     setIsAuthenticated(isAuthenticated)
-    // if (!isAuthenticated && pathname!="/") {
-    //     removeToken()
-    //     router.push('/user/login'); // Redirect to home if already authenticated
-    // }
   }, [authenticated, pathname]);
 
 

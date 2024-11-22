@@ -34,6 +34,17 @@ const validate = {
         else { valid = true }
         return valid;
     },
+    updateProfileForm(payload: any) {
+        var valid = false
+        if (payload == null) valid = true;
+        const requiredFields = ['firstName', 'lastName', 'email', 'phone'];
+        const missingFields = requiredFields.filter(field => payload != undefined && payload[field]);
+        if (missingFields.length > 0) {
+            valid = false;
+        }
+        else { valid = true }
+        return valid;
+    },
     signinForm(payload: any) {
         var valid = false
         if (payload == null) valid = true;
