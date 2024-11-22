@@ -17,7 +17,7 @@ export default function Pricing() {
             color: 'text-green-600',
             bgColor: 'bg-green-600',
             items: [
-                "For 6 users only, unlimited apps",
+                "For up to 6 users only, unlimited apps",
                 "Ideal for too small businesses",
                 "Functional training",
                 "2GB RAM, 25GB SSD storage"
@@ -29,7 +29,7 @@ export default function Pricing() {
             color: 'text-pink-600',
             bgColor: 'bg-pink-600',
             items: [
-                "For 11 users only, unlimited apps",
+                "For up to  11 users only, unlimited apps",
                 "Ideal for small businesses",
                 "Free support",
                 "Free upgrade",

@@ -100,11 +100,14 @@ export default function Signup() {
                                                 type="text"
                                                 placeholder="companyname"
                                                 onChange={(e: string) => {
-                                                    const input = `${e.toLowerCase()}`
+                                                    const rawInput = `${e}`.replaceAll(/\s/g, '')
+                                                    const input = `${rawInput.toLowerCase()}`
+
                                                     checkIfDomainIsAvailable(input)
                                                 }}
                                                 onInput={(e: string) => {
-                                                    const input = `${e.toLowerCase()}`
+                                                    const rawInput = `${e}`.replaceAll(/\s/g, '')
+                                                    const input = `${rawInput.toLowerCase()}`
                                                     setSiteNameAvailable(false)
                                                     setSubDomainName(input);
                                                     setFormError({ ...formError, domainName: validate.domainName(input) ? undefined : 'Invalid domain name' });
@@ -154,7 +157,8 @@ export default function Signup() {
                                                 placeholder="Enter your email address"
                                                 onLeave={(e: string) => checkIfEmailIsAvailable(e)}
                                                 onChange={(e: string) => {
-                                                    const input = `${e.toLowerCase()}`
+                                                    const rawInput = `${e}`.replaceAll(/\s/g, '')
+                                                    const input = `${rawInput.toLowerCase()}`
                                                     setUser({ ...user, email: input })
                                                     setFormError({ ...formError, email: validate.email(input) ? undefined : 'Invalid email address' })
                                                 }}
