@@ -53,7 +53,7 @@ export default function AppDetail({
         <Dialog open={open} onClose={() => { }} className="relative z-10">
             <DialogBackdrop
                 transition
-                className="fixed inset-0 bg-white0/75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+                className="fixed inset-0 bg-gray-50 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
             />
 
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
