@@ -83,7 +83,7 @@ export default function Pricing() {
                         at the end of the month—no hidden surprises.
                     </p>
                 </div>
-                <div className="py-10 w-[85%] md:max-w-[300px] mx-auto">
+                <div className="py-10 flex justify-center">
                     <SwitchButton
                         status={option.yearly}
                         rightTitle="Monthly"
