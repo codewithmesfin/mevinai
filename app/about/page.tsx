@@ -29,7 +29,7 @@ export default function About() {
                             <div className="py-4 w-full max-w-[180px]">
                                 <LinkButton 
                                 title={"Meet the team"} 
-                                 href="https://calendly.com/mesfin-tsegaye/codewithmesfin"
+                                 href="https://calendly.com/mesfin-tsegaye/meet-mevinai"
                                  openOnOtherTab
                                  showNextIcon
                                 />
