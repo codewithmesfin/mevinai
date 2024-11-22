@@ -17,7 +17,7 @@ export default function Pricing() {
             color: 'text-green-600',
             bgColor: 'bg-green-600',
             items: [
-                "For up to 6 users only, unlimited apps",
+                "Up to 6 users only, unlimited apps",
                 "Ideal for too small businesses",
                 "Functional training",
                 "2GB RAM, 25GB SSD storage"
@@ -29,7 +29,7 @@ export default function Pricing() {
             color: 'text-pink-600',
             bgColor: 'bg-pink-600',
             items: [
-                "For up to  11 users only, unlimited apps",
+                "Up to  11 users only, unlimited apps",
                 "Ideal for small businesses",
                 "Free support",
                 "Free upgrade",
@@ -69,7 +69,7 @@ export default function Pricing() {
         else setOption({ ...option, pricing: oldPricingOptions })
     }
 
-    return <div className='mx-auto w-full max-w-[90%]'>
+    return <div className='mx-auto w-full w-[90%] sm:max-w-6xl'>
         <div className="py-24 md:py-32">
             <div className='mx-auto py-6'>
                 <div className='py-4 mx-auto w-[90%] md:max-w-4xl'>
@@ -96,14 +96,14 @@ export default function Pricing() {
                 </div>
                 <div className='md:py-6'>
                     <div>
-                        <div className="md:flex justify-between md:space-x-5">
+                        <div className="md:flex justify-between md:space-x-10">
                             {
                                 option.pricing.map((item: any, index: number) => <div key={item.title}
                                     className="my-6 md:my-0 w-full rounded-xl border border-gray-100 shadow-sm"
                                 >
                                     <div className={`rounded-t-xl w-full h-2 ${item.bgColor}`}></div>
                                     <div className="p-5 md:p-6">
-                                        <h1 className="text-xl md:text-3xl font-bold">{item.title} </h1>
+                                        <h1 className="text-xl md:text-3xl font-bold text-gray-900">{item.title} </h1>
                                         {item.price && <h2 className="text-gray-600 py-3">
                                             ETB
                                             <span className={`text-5xl md:text-7xl font-semibold ${item.color}`}>{item.price.toLocaleString()}</span>
@@ -116,11 +116,11 @@ export default function Pricing() {
                                                 </div>)
                                             }
                                         </div>
-                                        <div className="py-4">
+                                        <div className="py-4 flex">
                                             <LinkButton
-                                                title={"Get started"}
+                                                title={"Select this pricing"}
                                                 href={"/user/signup"}
-                                                py="py-3"
+                                                py="py-2.5" showNextIcon
                                             />
                                         </div>
                                     </div>

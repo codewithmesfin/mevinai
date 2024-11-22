@@ -40,7 +40,7 @@ export default function Support() {
                                     Calendly and choose a time that works best for you.<br />
                                     Once {"you've"} selected a date and time, {"you'll"} be all set for your meeting.
                                 </p>
-                                <div className="pt-3 w-[80%] md:max-w-[200px]">
+                                <div className="pt-3 flex">
                                     <LinkButton
                                         href="https://calendly.com/mesfin-tsegaye/meet-mevinai"
                                         title="Book a meeting"

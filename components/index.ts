@@ -3,6 +3,7 @@ import PrivateNavbar from "./layout/private/PrivateNavbar";
 import CustomLayout from "./layout/Layout";
 import Footer from "./layout/Footer";
 import Brand from "./brand/MainBrand";
+import PrivateBrand from "./brand/PrivateBrand";
 import Button from "./button/Button";
 import OutlineLink from "./button/OutlineLink";
 import LinkButton from "./button/LinkButton";
@@ -28,5 +29,5 @@ export {
     LinkButton, Intro, Features,
     Reasons,Steps,TextField,DomainNameField,PasswordField,
     PrivateLayout,Sidebar,SidebarItem,SMPrivateNavbar,
-    Greeting,SwitchButton
+    Greeting,SwitchButton,PrivateBrand
 }

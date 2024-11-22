@@ -92,7 +92,7 @@ export default function PasswordResetRequest() {
                                             title={status == "loading" && !checkingEmail ? 'Sending email ...' : "Verify email"}
                                             isLoading={status == "loading" && !checkingEmail}
                                             onclick={submit}
-
+                                            px='w-full'
                                         />
                                     </div>
 

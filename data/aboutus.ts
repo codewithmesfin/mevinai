@@ -40,43 +40,43 @@ const values = [
     {
         title: "Do More with Less",
         subtitle: "We increase our competitive advantage in the marketplace by doing more with less. When there is a will, there is a way.",
-       icon: "🎯"
+        icon: "🎯"
     }
 ];
 
 
-const socials=[
+const socials = [
     {
-        title:"Linkedin",
-        href:"",
-        icon:"https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
+        title: "Linkedin",
+        href: "https://www.linkedin.com/company/mevinai",
+        icon: "https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
     },
     {
-        title:"Facebook",
-        href:"",
-        icon:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtfbcYeYgf0wQJ-LSPm3CPbyB7T1p0f5bnaA&s"
+        title: "Facebook",
+        href: "https://www.facebook.com/tesfaa.coffee",
+        icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtfbcYeYgf0wQJ-LSPm3CPbyB7T1p0f5bnaA&s"
     },
     {
-        title:"Youtube",
-        href:"",
-        icon:"https://cdn-icons-png.flaticon.com/256/2504/2504848.png"
+        title: "Youtube",
+        href: "https://www.youtube.com/@mevinai21",
+        icon: "https://cdn-icons-png.flaticon.com/256/2504/2504848.png"
     },
     {
-        title:"Instagram",
-        href:"",
-        icon:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
+        title: "Instagram",
+        href: "https://www.instagram.com/mevinai1/",
+        icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
     },
     {
-        title:"X(Twitter)",
-        href:"",
-        icon:"https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg"
+        title: "Github",
+        href: "https://github.com/mevinai",
+        icon: "https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg"
     },
     {
-        title:"Tiktok",
-        href:"",
-        icon:"https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png"
+        title: "Medium",
+        href: "https://codewithmesfin.medium.com",
+        icon: "https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png"
     },
 ]
 
 
-export { features ,values,socials}
+export { features, values, socials }

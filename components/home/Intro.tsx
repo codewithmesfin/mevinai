@@ -34,7 +34,7 @@ export default function Intro() {
                     </div>
                 </div>
                 <div className="sm:flex justify-center items-center sm:space-x-2 md:space-x-10">
-                    <div className='py-3 w-full md:max-w-[210px]'>
+                    <div className='py-3'>
                         <LinkButton
                             title="Get started for free"
                             leftIcon={
@@ -47,9 +47,9 @@ export default function Intro() {
                             py="py-3"
                         />
                     </div>
-                    <div className='py-3 w-full md:max-w-[220px]'>
+                    <div className='py-3'>
                         <OutlineLink href="/marketplace" title={"Explore marketplace"}
-                            py="py-3"
+                            py="py-3" 
                             leftIcon={
                                 <AdjustmentsHorizontalIcon
                                     path="right"

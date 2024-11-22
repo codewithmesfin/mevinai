@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-export default function PublicBrand() {
-  return <Link href="/"
+export default function PrivateBrand() {
+  return <Link href="/home"
     className="flex space-x-2 items-center"
   >
     <Image

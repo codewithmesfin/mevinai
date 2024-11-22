@@ -152,7 +152,7 @@ export default function Configure({ siteName, user }: PROPS) {
                     <h1 className="md:text-lg text-center text-gray-600">
                         Your new SaaS site, <span className="text-blue-600 italic">{siteName}</span> is ready for you! Get started with the configuration, and take it live whenever {"you're"} ready.
                     </h1>
-                    <div className="py-10 w-full md:max-w-[250px] mx-auto">
+                    <div className="py-10 flex justify-center">
                         <Button
                             title="Get started here"
                             isLoading={false}

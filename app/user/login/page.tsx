@@ -37,7 +37,6 @@ export default function Login() {
                 if (result.type == "user/login/rejected")
                     show.error(`Unable to login to your account. Try again.`)
                 else {
-                    show.success("Congratulation! Your have been logged in successfully.")
                     router.push('/home');
                 }
             } catch (err) {
@@ -106,7 +105,7 @@ export default function Login() {
                                             title={status == "loading" ? 'Trying to login ...' : "Sign in"}
                                             isLoading={status == "loading"}
                                             onclick={submit}
-
+                                            px="w-full"
                                         />
                                     </div>
 

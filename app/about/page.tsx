@@ -26,8 +26,8 @@ export default function About() {
                                     Mevinai can transform ideas in to realiy.
                                 </h1>
                             </div>
-                            <div className="py-4 w-full max-w-[180px]">
-                                <LinkButton 
+                            <div className="py-4 flex justify-start">
+                            <LinkButton 
                                 title={"Meet the team"} 
                                  href="https://calendly.com/mesfin-tsegaye/meet-mevinai"
                                  openOnOtherTab
@@ -61,19 +61,19 @@ export default function About() {
                     </div>
                     <div className="w-full">
                         <div className="w-full md:max-w-4xl mx-auto">
-                        <p className="text-gray-700 font-medium text-center md:text-xl py-2">
-                                    After a years of working in some of the highest
-                                    tech industries in the world, we come to realize
-                                    that our technical know-how, experience, and our
-                                    African value can be put together to create technologies
-                                    that will transform lives in Africa.
-                                </p>
-                                <p className="text-gray-700 font-medium text-center md:text-xl py-2">
-                                    As our first step in this grand journey, we are engineering the
-                                    rails on which technology innovation moves because we believe a
-                                    reliable, secure, and decentralized system will act as a catalyst
-                                    to unlock business opportunities everywhere.
-                                </p>
+                            <p className="text-gray-700 font-medium text-center md:text-xl py-2">
+                                After a years of working in some of the highest
+                                tech industries in the world, we come to realize
+                                that our technical know-how, experience, and our
+                                African value can be put together to create technologies
+                                that will transform lives in Africa.
+                            </p>
+                            <p className="text-gray-700 font-medium text-center md:text-xl py-2">
+                                As our first step in this grand journey, we are engineering the
+                                rails on which technology innovation moves because we believe a
+                                reliable, secure, and decentralized system will act as a catalyst
+                                to unlock business opportunities everywhere.
+                            </p>
                         </div>
                         <div className="w-full pt-16">
                             <Image src="/images/about/2.png" alt="abou1"
@@ -137,7 +137,8 @@ export default function About() {
                                 <div className='grid grid-cols-3 gap-4 md:gap-5'>
                                     {
                                         socials.map((item, i) => <Link key={item.title}
-                                            href={"/asdf"}
+                                            href={item.href}
+                                            target="_blank"
                                         >
                                             <div className="text-gray-800 hover:text-blue-600">
                                                 <div className="py-2 flex justify-center text-4xl">

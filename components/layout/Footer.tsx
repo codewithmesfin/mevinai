@@ -26,7 +26,7 @@ export default function Footer() {
                     <h1 className="text-sm text-center text-gray-600 p-3">
                         <Link
                             className="text-gray-900 font-extrabold px-1"
-                            href="https://mevinai.et"
+                            href="/"
                         >Mevinai PLC</Link>
                         - 2024
                     </h1>

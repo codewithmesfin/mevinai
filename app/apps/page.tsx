@@ -1,8 +1,8 @@
 "use client"
 
-import { use, useEffect, useState } from "react"
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState, AppDispatch } from "@/redux/store";
+import { useEffect, useState } from "react"
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from "@/redux/store";
 import LoadingIndicator from "@/components/LoadingIndicator";
 import { USER } from "@/types/user";
 import { useRouter } from "next/navigation";

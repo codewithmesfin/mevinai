@@ -100,7 +100,7 @@ export default function Home() {
             </section>
             {configuration.saas && <section className="py-6 md:py-16">
                 <div className="md:flex justfify-center items-center md:space-x-6 space-y-6 md:space-y-0">
-                    <div className="w-full md:w-1/2">
+                    <div className="w-full sm:w-1/2">
                         <div className="bg-white border border-gray-200 rounded-xl p-5 md:p-10">
                             <div>
                                 <div className="md:flex items-center space-x-3">
@@ -112,7 +112,7 @@ export default function Home() {
                                         <p className="text-gray-600 text-center md:text-left">Your Frappe site <span className="text-blue-600">{user?.siteName}</span> has been created and configured successfully</p>
                                     </div>
                                 </div>
-                                <div className="mt-4 w-[80%] md:max-w-[200px] mx-auto">
+                                <div className="mt-4 flex justify-center">
                                     <LinkButton
                                         title={"Go to ERPNext"}
                                         href={`http://${user?.siteName}`}
@@ -123,7 +123,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full md:w-1/2">
+                    <div className="w-full sm:w-1/2">
                         <div className="bg-white border border-gray-200 rounded-xl p-5 md:p-10">
                             <div className="pb-2">
                                 <h1 className="font-bold text-gray-700 text-lg">Configuration detail</h1>
@@ -198,7 +198,7 @@ export default function Home() {
                                 }
                             </div>}
                 </div>
-                <div className="my-6 w-[80%] md:max-w-[200px] mr-auto">
+                <div className="my-6 flex">
                     <LinkButton
                         title={"Install more apps"}
                         href={`/apps`}

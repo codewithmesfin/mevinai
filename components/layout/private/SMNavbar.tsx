@@ -5,7 +5,7 @@ import { AdjustmentsHorizontalIcon, Bars3BottomLeftIcon, Cog8ToothIcon, Informat
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import SidebarItem from "./SidebarItem";
-import { Brand } from "@/components";
+import { PrivateBrand } from "@/components";
 import Link from "next/link";
 
 
@@ -24,17 +24,17 @@ export default function SMPrivateNavbar() {
                 >
                     <Bars3BottomLeftIcon aria-hidden="true" className="size-6" />
                 </button>
-                <Brand />
+                <PrivateBrand />
             </div>
             <div className="flex items-center space-x-6">
                 <Link href={"/configuration"}>
-                    <InformationCircleIcon aria-hidden="true" className="size-6" />
+                    <InformationCircleIcon aria-hidden="true" className="size-6 text-gray-700" />
                 </Link>
                 <Link href={"/apps"}>
-                    <AdjustmentsHorizontalIcon aria-hidden="true" className="size-6" />
+                    <AdjustmentsHorizontalIcon aria-hidden="true" className="size-6 text-gray-700" />
                 </Link>
                 <Link href={"/settings"}>
-                    <Cog8ToothIcon aria-hidden="true" className="size-6" />
+                    <Cog8ToothIcon aria-hidden="true" className="size-6 text-gray-700" />
                 </Link>
             </div>
         </nav>
@@ -42,7 +42,7 @@ export default function SMPrivateNavbar() {
             <div className="fixed w-full inset-0 z-50" />
             <DialogPanel className="fixed inset-y-0 right-0 left-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div className="flex items-center justify-between">
-                    <Brand />
+                    <PrivateBrand />
                     <button
                         type="button"
                         className="-m-2.5 rounded-md p-2.5 text-red-600"

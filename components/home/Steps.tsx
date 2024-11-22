@@ -8,25 +8,27 @@ export default function Steps() {
         <div className="w-[90%] mx-auto my-3 bg-white">
             <div className="py-3 w-full md:max-w-4xl mx-auto">
                 <h1 className="text-gray-900 text-center text-3xl md:text-6xl font-semibold">
-                    <span className="text-[#1677FF] md:pr-2">3 simple steps</span>
+                    <span className="text-[#1677FF] pr-1 md:pr-2">3 simple steps</span>
                     to setup your SaaS automatically
                 </h1>
                 <p className="text-center md:text-xl text-gray-600 py-3">
                     We make it easy to secure accommodation and even easier for guests to pick and pay for rooms
                 </p>
-                <div className='py-6 w-full md:max-w-[240px] mx-auto'>
-                    <LinkButton
-                        title="Get started now"
-                        leftIcon={
-                            <ArrowPathIcon path="right"
-                                className="h-5 w-5"
-                                strokeWidth={2}
-                            />
-                        }
-                        href={"/user/signup"}
-                        py="py-3"
-                        showNextIcon
-                    />
+                <div className='py-6 mx-auto'>
+                    <div className="flex justify-center">
+                        <LinkButton
+                            title="Get started now"
+                            leftIcon={
+                                <ArrowPathIcon path="right"
+                                    className="h-5 w-5"
+                                    strokeWidth={2}
+                                />
+                            }
+                            href={"/user/signup"}
+                            py="py-3"
+                            showNextIcon
+                        />
+                    </div>
                 </div>
             </div>
             <div className="md:flex items-center justify-center md:space-x-10">
@@ -41,7 +43,7 @@ export default function Steps() {
                             {
                                 steps.map((item, index) => <div key={item.title}>
                                     <div className="flex space-x-2 py-3">
-                                        <div className="text-lg md:text-xl text-blue-900">{index+1}.</div>
+                                        <div className="text-lg md:text-xl text-blue-900">{index + 1}.</div>
                                         <div>
                                             <h1 className="text-gray-800 font-semibold">
                                                 {item.title}

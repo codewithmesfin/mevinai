@@ -83,7 +83,7 @@ export default function ResetPassword() {
                                             title={status == "loading" ? 'Resetting ...' : "Reset password"}
                                             isLoading={status == "loading"}
                                             onclick={submit}
-
+                                            px='w-full'
                                         />
                                     </div>
 

@@ -24,7 +24,7 @@ export default function OutlineLink({
 }: PROPS) {
     return <Link
         href={href}
-        className={`w-full ${bgColor} ${borderColor} ${textColor} ${py} flex justify-center md:justify-evenly items-center space-x-2 rounded-xl border hover:border-green-500 hover:bg-green-500 hover:text-white px-3`}
+        className={`${bgColor} ${borderColor} ${textColor} ${py} flex justify-center md:justify-evenly items-center space-x-2 rounded-xl border hover:border-green-500 hover:bg-green-500 hover:text-white px-3 sm:px-6`}
     >{leftIcon}
         <span>{title}</span>
         {showNextIcon && <ArrowRightIcon path="right" className="h-4 w-4" strokeWidth={2} />}

@@ -10,8 +10,8 @@ interface PROPS {
     disabled?: boolean,
     onclick: () => void,
     leftIcon?: any
-    py?:string
-    px?:string
+    py?: string
+    px?: string
 }
 
 export default function Button({
@@ -23,19 +23,16 @@ export default function Button({
     disabled = false,
     leftIcon,
     onclick,
-    py="py-2.5",
-    px="px-3"
+    py = "py-2.5",
+    px = "px-3 sm:px-6"
 }: PROPS) {
-    return <div className=" w-full">
-
-        <button
-            disabled={disabled}
-            onClick={onclick}
-            className={`w-full ${py} ${px} rounded-xl ${bgColor} ${textColor} flex justify-center items-center spaxe-x-3 hover:bg-green-600`}
-        >{isLoading && <LoadingIndicator />}
-            {leftIcon}
-            <span className={`${textColor} px-3`}>{title}</span>
-            {showNextIcon && <ArrowRightIcon path="right" className="h-4 w-4" strokeWidth={2} />}
-        </button>
-    </div>
+    return <button
+        disabled={disabled}
+        onClick={onclick}
+        className={`${py} ${px} rounded-xl ${bgColor} ${textColor} flex justify-center items-center spaxe-x-3 hover:bg-green-600`}
+    >{isLoading && <LoadingIndicator />}
+        {leftIcon}
+        <span className={`${textColor} px-3`}>{title}</span>
+        {showNextIcon && <ArrowRightIcon path="right" className="h-4 w-4" strokeWidth={2} />}
+    </button>
 }

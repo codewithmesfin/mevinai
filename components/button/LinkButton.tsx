@@ -27,7 +27,7 @@ export default function LinkButton({
     return <Link
         href={href}
         target={openOnOtherTab?'_blank':'_self'}
-        className={`w-full ${bgColor} ${borderColor} ${textColor} ${py} flex justify-center md:justify-evenly items-center space-x-2 rounded-xl border hover:border-green-500 hover:bg-green-500 hover:text-white px-4`}
+        className={`${bgColor} ${borderColor} ${textColor} ${py} flex justify-center md:justify-evenly items-center space-x-2 rounded-xl border hover:border-green-500 hover:bg-green-500 hover:text-white px-4 sm:px-6`}
     >
         {leftIcon}
         <span>{title}</span>

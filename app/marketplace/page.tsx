@@ -57,7 +57,7 @@ export default function Marketplace() {
                     </p>
                 </div>
 
-                <div className="w-[85%] md:max-w-[200px] mx-auto">
+                <div className="flex justify-center">
                     <LinkButton title={"Get started now"} href={"/user/login"} showNextIcon />
                 </div>
             </div>
