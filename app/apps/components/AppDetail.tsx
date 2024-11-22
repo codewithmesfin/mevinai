@@ -14,7 +14,7 @@ import show from '@/lib/toast'
 interface PROPS {
     open: boolean,
     app: APP_INFO | undefined,
-    toggleModal: (buttonName:string) => void,
+    toggleModal: (buttonName: string) => void,
     siteName: string
 }
 
@@ -35,10 +35,10 @@ export default function AppDetail({
             "siteName": siteName,
             "app": app?.appName
         }
-        api.create(payload, installed?"/uninstall-app": "/install-app")
+        api.create(payload, installed ? "/uninstall-app" : "/install-app")
             .then(() => {
                 show.success(`${app?.title} has been ${installed ? 'uninstalled' : "installed"} successfully.`)
-                 })
+            })
             .catch(() => {
                 show.error(`Unable to install ${app?.title} to site ${siteName} right now. Try again.`)
             })
@@ -47,13 +47,13 @@ export default function AppDetail({
                 toggleModal("installUninstall")
             });
     }
-  
+
 
     return (
         <Dialog open={open} onClose={() => { }} className="relative z-10">
             <DialogBackdrop
                 transition
-                className="fixed inset-0 bg-gray-50 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+                className="fixed inset-0 bg-white0/75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
             />
 
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
@@ -99,7 +99,7 @@ export default function AppDetail({
                                     <span className='text-gray-600'>{installed ? 'Uninstalling' : "Installing"} {app?.title} ... </span>
                                 </div>
                                 : <div className='sm:flex sm:flex-row-reverse'>
-                                   {app?.appName!="erpnext"&& <button
+                                    {app?.appName != "erpnext" && <button
                                         onClick={installOrInstallApp}
                                         className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
                                     >
