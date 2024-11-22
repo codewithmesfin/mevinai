@@ -19,7 +19,8 @@ export default function Pricing() {
             items: [
                 "For 6 users only, unlimited apps",
                 "Ideal for too small businesses",
-                "Functional training"
+                "Functional training",
+                "2GB RAM, 25GB SSD storage"
             ]
         },
         {
@@ -33,7 +34,8 @@ export default function Pricing() {
                 "Free support",
                 "Free upgrade",
                 "Technical training",
-                "Functional Training"
+                "Functional Training",
+                "4GB RAM, 100GB SSD storage"
             ]
         },
         {
@@ -46,7 +48,7 @@ export default function Pricing() {
                 "Free support",
                 "Free upgrade",
                 "Technical training",
-                "Functional Training",
+                "Functional Training"
             ]
         },
 
