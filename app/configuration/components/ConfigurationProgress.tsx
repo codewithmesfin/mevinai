@@ -49,7 +49,7 @@ export default function ConfigurationProgress({
                                     </DialogTitle>
                                     <div className="mt-2">
                                         <p className="text-sm text-gray-500">
-                                            Please wait while we complete the SaaS configuration process. Avoid closing or refreshing this page.
+                                            Please wait while we complete the SaaS configuration process. The configuration process will take about 1 - 3 mintues based on your internet speed. Avoid closing or refreshing this page.
                                         </p>
                                     </div>
                                     <div className='py-5'>

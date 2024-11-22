@@ -6,7 +6,7 @@ const guides = [
     },
     {
         title: "Configure Your SaaS",
-        description: "Start the fully automated setup process for your Software as a Service platform. Configuration takes less than 2 minutes, after which you'll receive an email with your ERPNext login credentials.",
+        description: "Start the fully automated setup process for your Software as a Service platform. Configuration takes less than 3 minutes, after which you'll receive an email with your ERPNext login credentials.",
         icon: "⚙️", // Gear icon to represent configuration,
         href: "/configuration",
         linkTitle: "Check it now"

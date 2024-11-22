@@ -1,6 +1,6 @@
 const reasons = [
   {
-    title: "Get ERPNext in 2 minutes only",
+    title: "Get ERPNext in 3 minutes only",
     subtitle: "Quick and seamless setup without any manual intervention.",
     icon: "🚀"
   },

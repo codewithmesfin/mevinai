@@ -22,7 +22,7 @@ export default function Intro() {
                         <span
                             className='bg-gradient-to-r from-green-600 via-[#1677FF] to-green-600 inline-block text-transparent bg-clip-text font-extrabold'>
                             {"ERPNext SaaS "}
-                        </span> in 2 minutes
+                        </span> in 3 minutes
                     </h1>
                     <div className="pt-2 md:py-4 mx-auto md:max-w-3xl">
                         <p className="text-gray-700 text-center">
