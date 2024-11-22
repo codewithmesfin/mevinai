@@ -202,7 +202,7 @@ export default function Signup() {
                                             title={status == "loading" && !checkingDomainName && !checkingEmail ? 'Creating your account ...' : "Start your 7 day free trial"}
                                             isLoading={status == "loading" && !checkingDomainName && !checkingEmail}
                                             onclick={submit}
-                                            py="w-full"
+                                            px="w-full"
                                         />
                                     </div>
                                 </div>
