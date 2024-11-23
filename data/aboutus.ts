@@ -69,12 +69,12 @@ const socials = [
     {
         title: "Github",
         href: "https://github.com/mevinai",
-        icon: "https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg"
+        icon: "https://cdn-icons-png.flaticon.com/512/25/25231.png"
     },
     {
         title: "Medium",
         href: "https://codewithmesfin.medium.com",
-        icon: "https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png"
+        icon: "https://w7.pngwing.com/pngs/194/410/png-transparent-medium-medium-logo-social-media-circle-icon.png"
     },
 ]
 
