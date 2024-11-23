@@ -116,7 +116,8 @@ export default function Support() {
                                 <div className='grid grid-cols-3 gap-4 md:gap-5'>
                                     {
                                         socials.map((item, i) => <Link key={item.title}
-                                            href={"/asdf"}
+                                            href={item.href}
+                                            target="_blank"
                                         >
                                             <div className="text-gray-800 hover:text-blue-600">
                                                 <div className="py-2 flex justify-center text-4xl">

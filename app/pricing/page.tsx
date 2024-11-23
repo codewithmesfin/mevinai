@@ -13,7 +13,7 @@ export default function Pricing() {
     const pricingOptions = [
         {
             title: "Basic",
-            price: 600,
+            price: 500,
             color: 'text-green-600',
             bgColor: 'bg-green-600',
             items: [
@@ -25,7 +25,7 @@ export default function Pricing() {
         },
         {
             title: "Standard",
-            price: 1300,
+            price: 1200,
             color: 'text-pink-600',
             bgColor: 'bg-pink-600',
             items: [
@@ -69,7 +69,7 @@ export default function Pricing() {
         else setOption({ ...option, pricing: oldPricingOptions })
     }
 
-    return <div className='mx-auto w-full w-[90%] sm:max-w-6xl'>
+    return <div className='mx-auto w-[90%] sm:max-w-6xl'>
         <div className="py-24 md:py-32">
             <div className='mx-auto py-6'>
                 <div className='py-4 mx-auto w-[90%] md:max-w-4xl'>
