@@ -65,7 +65,7 @@ export default function Support() {
                     <div>
                         <h1
                             style={{ lineHeight: 1.2 }}
-                            className="text-gray-900 text-2xl md:text-5xl font-bold text-center">
+                            className="text-gray-900 text-2xl md:text-5xl font-bold md:text-center">
                             Our team is
                             <span
                                 className='px-2 italic font-extrabold text-3xl md:text-6xl italic1 bg-gradient-to-r from-[#ff4533] to-green-500 inline-block text-transparent bg-clip-text font-extrabold'>
