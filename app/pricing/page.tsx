@@ -44,7 +44,7 @@ export default function Pricing() {
             bgColor: 'bg-orange-600',
             items: [
                 "For unlimited users, unlimited apps",
-                "Ideal for small businesses",
+                "Ideal for SMEs",
                 "Free support",
                 "Free upgrade",
                 "Technical training",
