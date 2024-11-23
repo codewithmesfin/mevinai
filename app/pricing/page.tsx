@@ -107,6 +107,7 @@ export default function Pricing() {
                                         {item.price && <h2 className="text-gray-600 py-3">
                                             ETB
                                             <span className={`text-5xl md:text-7xl font-semibold ${item.color}`}>{item.price.toLocaleString()}</span>
+                                            / month
                                         </h2>}
                                         <div className="py-3">
                                             {
