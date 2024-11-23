@@ -32,7 +32,7 @@ export default function Configure({ siteName, user }: PROPS) {
                     }
                     return prevProgress;
                 });
-            }, 1250); // Adjust interval time for speed of increment
+            }, 1150); // Adjust interval time for speed of increment
         }
 
     };
