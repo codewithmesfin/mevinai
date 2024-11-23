@@ -72,7 +72,7 @@ export default function Support() {
                                 {"actively "}
                             </span>
                         </h1>
-                        <p className={`text-gray-700 text-center text-xl md:text-3xl py-3`}>
+                        <p className={`text-gray-700 md:text-center text-xl md:text-3xl py-3`}>
                             available for phone call and email for your convenience
                         </p>
                     </div>
