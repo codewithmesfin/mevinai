@@ -32,7 +32,7 @@ export default function Login() {
         }
         else {
             try {
-                const result = await dispatch(login({ email: user?.email, password: user?.password }));
+                const result = await dispatch(login({ email: `${user?.email}`.toLowerCase(), password: user?.password }));
 
                 if (result.type == "user/login/rejected")
                     show.error(`Unable to login to your account. Try again.`)

@@ -81,8 +81,16 @@ const modules = [
       appName: "raven",
       bg: "#fbcfe8",
       href:"https://www.ravenchat.ai/"
-  }
-  
+  },
+  {
+    title: "Change Makers",
+    subtitle: "Frappe Changemakers is basically a Beneficiary Management System. It helps non-profit and social organisations to manage their beneficiaries and track services provided to them.",
+    image: "https://frappecloud.com/files/cm_Logo_updated.png",
+    free: true,
+    appName: "changemakers",
+    bg: "#bbf7d0",
+    href:"https://github.com/frappe/changemakers/"
+}
   ];
   
     export {modules}
