@@ -60,16 +60,6 @@ export default function NotFound() {
                 </Link>
               </div>
 
-              <div className="mt-5 flex justify-center items-center space-x-3">
-                <Image src="/images/img2.png" alt=""
-                  className='h-16 w-40 rounded-xl'
-                  width={500} height={500}
-                />
-                <div className="">
-                  <h2 className='text-gray-500 py-1'>Join 2,000+ others who signed up</h2>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
