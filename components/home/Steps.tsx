@@ -11,8 +11,8 @@ export default function Steps() {
                     <span className="text-[#1677FF] pr-1 md:pr-2">3 simple steps</span>
                     to setup your SaaS automatically
                 </h1>
-                <p className="text-center md:text-xl text-gray-600 py-3">
-                    We make it easy to secure accommodation and even easier for guests to pick and pay for rooms
+                <p className="text-center md:text-lg text-gray-600 py-3">
+                    At Mevinai, launching an ERPNext-based SaaS is effortless. With just one click and a wait time of no more than 2 minutes, your entire setup is ready to go.
                 </p>
                 <div className='py-6 mx-auto'>
                     <div className="flex justify-center">
@@ -31,39 +31,23 @@ export default function Steps() {
                     </div>
                 </div>
             </div>
-            <div className="md:flex items-center justify-center md:space-x-10">
-                <div className="w-full md:w-2/5">
-                    <div className="py-6">
-                        <h1 className="text-gray-700">
-                            Deploying ERPNext and other Frappe apps with Mevinai is a seamless process.
-                            {"There's"} no need for software engineers or DevOps professionals—just get started
-                            and launch your ERPNext SaaS in under two minutes!
-                        </h1>
-                        <div className="py-3">
-                            {
-                                steps.map((item, index) => <div key={item.title}>
-                                    <div className="flex space-x-2 py-3">
-                                        <div className="text-lg md:text-xl text-blue-900">{index + 1}.</div>
-                                        <div>
-                                            <h1 className="text-gray-800 font-semibold">
-                                                {item.title}
-                                            </h1>
-                                            <p className="text-gray-700 py-1">
-                                                {item.subtitle}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>)
-                            }
-                        </div>
-                    </div>
-                </div>
-                <div className="w-full md:w-2/5">
-                    <Image alt="mevinai"
-                        src={"/images/img1.png"}
-                        height={600} width={600}
-                        className="h-full w-full object-contain"
-                    />
+            <div className="w-full md:max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10">
+                    {
+                        steps.map((item, index) => <div key={item.title}>
+                            <div className="flex items-center space-x-2 py-3 h-full rounded-xl bg-gray-50 border border-gray-100 p-5 ">
+                                <div>
+                                    <h1 className="font-medium text-blue-600">Step {index + 1}</h1>
+                                    <h1 className="text-gray-800 pt-1 font-semibold text-lg md:text-xl">
+                                        {item.title}
+                                    </h1>
+                                    <p className="text-gray-600 py-1">
+                                        {item.subtitle}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>)
+                    }
                 </div>
             </div>
         </div>

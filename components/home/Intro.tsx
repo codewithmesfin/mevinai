@@ -27,9 +27,9 @@ export default function Intro() {
                     <div className="pt-2 md:py-4 mx-auto md:max-w-3xl">
                         <p className="text-gray-700 text-center">
                             Discover the ultimate all-in-one solution {"you've"} been searching for!
-                            Simple, powerful, and budget-friendly Solution – ERPNext.
-                            Go live today with the {"world’s"} #1 free and open-source enterprise
-                            software solution.
+                            Simple, powerful, and budget-friendly Solution – <span className="font-bold">ERPNext</span>.
+                            <span className="px-1 font-medium">Go live today with the {"world’s"} <b>#1 free and open-source</b> enterprise
+                            software solution.</span>
                         </p>
                     </div>
                 </div>

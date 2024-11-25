@@ -21,23 +21,24 @@ export default function About() {
                             </h1>
                             <div className="py-4">
                                 <h1
-                                    style={{ lineHeight: 1.2 }}
+                                    style={{ lineHeight: 1.3 }}
                                     className="text-gray-900 text-3xl md:text-5xl font-bold">
-                                    Mevinai can transform ideas in to realiy.
+                                    Mevinai is innovating technologies that creates
+                                    <span className="text-blue-800 px-2">great lives for great people.</span>
                                 </h1>
                             </div>
                             <div className="py-4 flex justify-start">
-                            <LinkButton 
-                                title={"Meet the team"} 
-                                 href="https://calendly.com/mesfin-tsegaye/meet-mevinai"
-                                 openOnOtherTab
-                                 showNextIcon
+                                <LinkButton
+                                    title={"Meet the team"}
+                                    href="https://calendly.com/mesfin-tsegaye/meet-mevinai"
+                                    openOnOtherTab
+                                    showNextIcon
                                 />
                             </div>
                         </div>
                         <div className="w-full md:w-2/5 pt-10 md:pt-1">
                             <Image src="/images/about/1.png" alt="abou1"
-                                className="w-full h-full"
+                                className="w-full h-full rounded-xl object-contain"
                                 width={500}
                                 height={500}
                             />
@@ -51,7 +52,8 @@ export default function About() {
                     <div className="py-3">
                         <h1 className="text-blue-600 text-center font-bold text-2xl md:text-3xl">
                             About us
-                        </h1> <div className="w-full md:max-w-4xl mx-auto py-4">
+                        </h1>
+                        <div className="w-full md:max-w-5xl mx-auto py-3">
                             <h1
                                 style={{ lineHeight: 1.2 }}
                                 className="text-gray-900 text-3xl text-center md:text-7xl font-bold">
@@ -59,23 +61,31 @@ export default function About() {
                             </h1>
                         </div>
                     </div>
-                    <div className="w-full">
-                        <div className="w-full md:max-w-4xl mx-auto">
-                            <p className="text-gray-700 font-medium text-center md:text-xl py-2">
+                    <div className="md:flex justify-center items-center md:space-x-10">
+                        <div className="w-full md:w-2/5">
+                            <p className="text-gray-600 py-2">
                                 After a years of working in some of the highest
                                 tech industries in the world, we come to realize
                                 that our technical know-how, experience, and our
                                 African value can be put together to create technologies
                                 that will transform lives in Africa.
                             </p>
-                            <p className="text-gray-700 font-medium text-center md:text-xl py-2">
+                            <p className="text-gray-600 py-2">
                                 As our first step in this grand journey, we are engineering the
                                 rails on which technology innovation moves because we believe a
                                 reliable, secure, and decentralized system will act as a catalyst
                                 to unlock business opportunities everywhere.
                             </p>
+                            <div className="py-4 flex justify-start">
+                                <LinkButton
+                                    title={"Meet the team"}
+                                    href="https://calendly.com/mesfin-tsegaye/meet-mevinai"
+                                    openOnOtherTab
+                                    showNextIcon
+                                />
+                            </div>
                         </div>
-                        <div className="w-full pt-16">
+                        <div className="w-full md:w-2/5 pt-16 md:pt-1">
                             <Image src="/images/about/2.png" alt="abou1"
                                 className="w-full h-full rounded-xl"
                                 width={500}
@@ -92,10 +102,10 @@ export default function About() {
                             features.map((item, i) => <div key={item.title}
                             >
                                 <div >
-                                    <div className="py-2 text-2xl md:text-4xl">
+                                    <div className="py-2 text-3xl md:text-6xl">
                                         {item.icon}
                                     </div>
-                                    <h1 className='text-gray-900 text-xl'>{item.title}</h1>
+                                    <h1 className='text-gray-900 text-lg font-bold'>{item.title}</h1>
                                     <p className="text-gray-600 py-1">
                                         {item.subtitle}
                                     </p>
@@ -107,7 +117,7 @@ export default function About() {
             </section>
 
 
-            <section className="py-10 md:py-16">
+            <section className="py-10 md:py-10">
                 <div className="w-[90%] mx-auto ">
                     <div className="w-full md:py-16">
                         <div className="md:flex items-center md:space-x-20">

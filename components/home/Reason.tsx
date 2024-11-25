@@ -12,9 +12,14 @@ export default function Reasons() {
                 <h1 className="text-gray-900 md:text-center text-4xl md:text-6xl font-semibold">
                     Why Mevinai 
                 </h1>
+                <div className="w-full md:max-w-4xl mx-auto">
                 <p className="text-center md:text-lg text-gray-600 py-3">
-                    We make it easy to secure accommodation and even easier for guests to pick and pay for rooms
+                {"We’re"} on a mission to help you connect to opportunity and positively impact business. 
+                {"We'll"} be sharing stories, insights, and resources to help you make the most of 
+                your work and make a difference in the world. {"We're"} excited to get started, and we 
+                hope you are too. {"Let's"} make a difference, together.
                 </p>
+                </div>
             </div>
             <div className="md:py-4">
                 <div className="md:flex justify-center md:space-x-6">
