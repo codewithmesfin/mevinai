@@ -12,7 +12,7 @@ export default function About() {
         <>
             <section
                 className="bg-white flex items-center">
-                <div className="w-[95%] md:w-[95%] mx-auto pt-32 md:pt-48 pb-10">
+                <div className="w-[90%] md:w-[95%] mx-auto pt-32 md:pt-48 pb-10">
                     <div className="md:flex md:space-x-10 justify-evenly items-center">
                         <div className="w-full md:w-2/5">
                             <h1 className="py-2 text-blue-900 flex space-x-2 items-center">
@@ -49,14 +49,14 @@ export default function About() {
 
             <section className="py-10 md:py-16">
                 <div className="w-[90%] mx-auto ">
-                    <div className="py-3">
+                    <div className="py-2 md:py-3">
                         <h1 className="text-blue-600 text-center font-bold text-2xl md:text-3xl">
                             About us
                         </h1>
                         <div className="w-full md:max-w-5xl mx-auto py-3">
                             <h1
                                 style={{ lineHeight: 1.2 }}
-                                className="text-gray-900 text-3xl text-center md:text-7xl font-bold">
+                                className="text-gray-900 text-2xl text-center md:text-7xl font-bold">
                                 We are a small team of professional engineers. We are growing.
                             </h1>
                         </div>
@@ -100,6 +100,7 @@ export default function About() {
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10'>
                         {
                             features.map((item, i) => <div key={item.title}
+                            className="border border-gray-100 p-5 rounded-lg md:border-none md:p-0 "
                             >
                                 <div >
                                     <div className="py-2 text-3xl md:text-6xl">
@@ -118,7 +119,7 @@ export default function About() {
 
 
             <section className="py-10 md:py-10">
-                <div className="w-[90%] mx-auto ">
+                <div className="w-[90%] md:max-w-[80%] mx-auto ">
                     <div className="w-full md:py-16">
                         <div className="md:flex items-center md:space-x-20">
                             <div className="w-full md:w-2/5">
