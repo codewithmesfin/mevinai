@@ -9,7 +9,7 @@ import { guides } from "@/data";
 export default function UserGuide() {
 
 
-    return <div className="py-16 md:py-32">
+    return <div className="py-24 md:py-32">
         <div className="w-[90%] md:max-w-5xl mx-auto">
             <div className='py-4 mx-auto w-[90%] md:max-w-4xl'>
                 <h1 className={`text-gray-600 text-center text-4xl md:text-6xl font-bold pb-3`}>
