@@ -11,6 +11,7 @@ import { RootState, AppDispatch } from "@/redux/store";
 import { checkDomainNameExistance, checkEmailExistence } from "@/redux/slices/userSlice";
 import { register } from "@/redux/slices/userSlice";
 import show from "@/lib/toast";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 
 export default function Signup() {
@@ -86,9 +87,17 @@ export default function Signup() {
                             <Brand />
                         </div>
                         <div className="bg-white border shadow-sm rounded-xl border-gray-200 rounded p-5 md:p-8">
-                            <h2 className="pb-5 text-center text-lg text-gray-700">
-                                Create a new account
-                            </h2>
+                            <div className="pb-5 flex justify-evenly items-center space-x-3">
+                                <h2 className="text-center text-lg text-gray-700">
+                                    Create a new account
+                                </h2>
+                                <Link 
+                                href={"/guide"}
+                                className="flex justify-center items-center space-x-2 border-b border-blue-600">
+                                    <ArrowRightIcon aria-hidden="true" className="size-4" />
+                                    <span className="text-sm text-gray-900">Guide</span>
+                                </Link>
+                            </div>
 
                             <div>
                                 <div className="space-y-6" >

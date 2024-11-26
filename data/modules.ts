@@ -92,7 +92,7 @@ const modules = [
     href:"https://github.com/frappe/changemakers/"
 },
 {
-    title: "Marketplace",
+    title: "Webshop",
     subtitle: "Frappe Webshop was developed as part of the Frappe framework, which is designed to help developers quickly create business applications with minimal code by offering a combination of easy to use front-end and back-end development tools.",
     image: "/logo.png",
     free: true,
