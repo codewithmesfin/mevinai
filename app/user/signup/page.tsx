@@ -228,7 +228,6 @@ export default function Signup() {
                                     </Link>
                                 </p>
                             </div>
-
                         </div>
                     </section>
                 </div>

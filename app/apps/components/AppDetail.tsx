@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { ArrowPathIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
@@ -9,12 +9,13 @@ import { APP_INFO } from '@/types/app'
 import LoadingIndicator from '@/components/LoadingIndicator'
 import api from '@/lib/api'
 import show from '@/lib/toast'
+import CircularProgressIndicator from './CircularProgressIndicator'
 
 
 interface PROPS {
     open: boolean,
     app: APP_INFO | undefined,
-    toggleModal: (buttonName:string) => void,
+    toggleModal: (buttonName: string) => void,
     siteName: string
 }
 
@@ -25,29 +26,70 @@ export default function AppDetail({
     siteName
 }: PROPS) {
 
+    const [progress, setProgress] = useState(0);
+    const totalRequests = 4;
+    let completedRequests = 0;
+    let progressInterval: any;
+    const startProgress = () => {
+
+        if (progress < 0) return 0
+        else {
+            // Clear any existing interval to avoid duplication
+            clearInterval(progressInterval);
+
+            // Start a new interval to increment progress gradually
+            progressInterval = setInterval(() => {
+                setProgress((prevProgress) => {
+                    // Keep increasing until it reaches close to 100, but not exactly 100
+                    if (prevProgress < 94) {
+                        return prevProgress + 1; // Adjust increment for smoother/slower/faster effect
+                    }
+                    return prevProgress;
+                });
+            }, 700); // Adjust interval time for speed of increment
+        }
+
+    };
+    const finalizeProgress = () => {
+        completedRequests += 1;
+
+        if (completedRequests === totalRequests) {
+            // When all requests complete, clear the interval and set progress to 100
+            clearInterval(progressInterval);
+            setProgress(99);
+        }
+    };
+
+    useEffect(() => {
+        return () => clearInterval(progressInterval);
+    }, []);
+
+
     const installed = app?.alreadyInstalled
     const [loading, setLoading] = useState<boolean>(false)
 
     const installOrInstallApp = () => {
         setLoading(true)
-
+        startProgress();
         const payload = {
             "siteName": siteName,
             "app": app?.appName
         }
-        api.create(payload, installed?"/uninstall-app": "/install-app")
+        api.create(payload, installed ? "/uninstall-app" : "/install-app")
             .then(() => {
                 show.success(`${app?.title} has been ${installed ? 'uninstalled' : "installed"} successfully.`)
-                 })
+            })
             .catch(() => {
                 show.error(`Unable to install ${app?.title} to site ${siteName} right now. Try again.`)
             })
             .finally(() => {
+                setProgress(99)
                 setLoading(false)
                 toggleModal("installUninstall")
+                setProgress(0)
+                finalizeProgress();
             });
     }
-  
 
     return (
         <Dialog open={open} onClose={() => { }} className="relative z-10">
@@ -94,12 +136,12 @@ export default function AppDetail({
 
                         <div className="bg-white px-4 py-3 sm:px-6">
                             {loading ?
-                                <div className='flex items-center space-x-3'>
-                                    <LoadingIndicator />
-                                    <span className='text-gray-600'>{installed ? 'Uninstalling' : "Installing"} {app?.title} ... </span>
-                                </div>
+                                <CircularProgressIndicator
+                                    title={installed ? `Uninstalling ${app.appName}` : `Installing ${app?.appName}`}
+                                    progress={Math.floor(progress)}
+                                />
                                 : <div className='sm:flex sm:flex-row-reverse'>
-                                   {app?.appName!="erpnext"&& <button
+                                    {app?.appName != "erpnext" && <button
                                         onClick={installOrInstallApp}
                                         className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
                                     >
