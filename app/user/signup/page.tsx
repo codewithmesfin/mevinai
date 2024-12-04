@@ -126,6 +126,7 @@ export default function Signup() {
                                                 available={siteNameAvailable}
                                                 domainName={`${subdomainName}.mevinai.com`}
                                                 loading={checkingDomainName}
+                                                isRequired
                                             />
                                         </div>
 
@@ -141,6 +142,7 @@ export default function Signup() {
                                                     }}
                                                     value={user?.firstName || ""}
                                                     error={formError?.firstName}
+                                                    isRequired
                                                 />
                                             </div>
 
@@ -155,6 +157,7 @@ export default function Signup() {
                                                     }}
                                                     value={user?.lastName || ""}
                                                     error={formError?.lastName}
+                                                    isRequired
                                                 />
                                             </div>
                                         </div>
@@ -173,6 +176,7 @@ export default function Signup() {
                                                 }}
                                                 value={user?.email || ""}
                                                 error={formError?.email}
+                                                isRequired
                                             />
                                         </div>
 
@@ -186,6 +190,7 @@ export default function Signup() {
                                                 }}
                                                 value={user?.phone || ""}
                                                 error={formError?.phone}
+                                                isRequired
                                             />
                                         </div>
 
@@ -199,6 +204,7 @@ export default function Signup() {
                                                 }}
                                                 value={user?.password || ""}
                                                 error={formError?.password}
+                                                isRequired
                                             />
                                         </div>
 

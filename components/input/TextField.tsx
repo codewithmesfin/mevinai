@@ -1,3 +1,4 @@
+import RequiredLabel from "@/app/user/components/requiredLabel";
 
 
 
@@ -31,7 +32,7 @@ export default function TextField({
 }: PROPS) {
     return <div>
         <label htmlFor={type} className="block text-sm text-gray-700">
-            {label}
+            {label} {isRequired && <RequiredLabel />}
         </label>
         <div className="mt-2">
             <input

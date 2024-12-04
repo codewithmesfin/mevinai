@@ -1,5 +1,6 @@
 "use client"
 
+import RequiredLabel from "@/app/user/components/requiredLabel";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
@@ -30,7 +31,7 @@ export default function PasswordField({
     const [showPassword, setShowPassword] = useState(true)
     return <div>
         <label htmlFor='password' className="block text-sm text-gray-700">
-            {label}
+            {label} {isRequired && <RequiredLabel />}
         </label>
         <div className="mt-2">
             <div className={

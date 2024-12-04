@@ -1,5 +1,6 @@
 import { CheckIcon } from "@heroicons/react/24/outline";
 import LoadingIndicator from "../LoadingIndicator";
+import RequiredLabel from "@/app/user/components/requiredLabel";
 
 
 
@@ -24,7 +25,7 @@ interface PROPS {
     autoComplete?: string
     isRequired?: boolean,
     domainName: string,
-    disabled?:boolean
+    disabled?: boolean
 
 }
 
@@ -36,18 +37,21 @@ export default function DomainNameField({
     available = false,
     onChange,
     onInput,
-    autoComplete = "off", isRequired = false,
-    domainName, loading,disabled=false
+    autoComplete = "off",
+    isRequired = false,
+    domainName,
+    loading,
+    disabled = false
 }: PROPS) {
     return <div>
         <label htmlFor={type} className="block text-sm text-gray-700">
-            {label}
+            {label} {isRequired && <RequiredLabel />}
         </label>
         <div className="mt-2 ">
             <div className={`border  ${error ? 'border-red-600' : 'border-gray-200'} rounded-xl px-4 flex items-center space-x-3 md:space-x-3`}>
-            <p className="text-gray-600 italic1">https://</p>
+                <p className="text-gray-600 italic1">https://</p>
                 <input
-                disabled={disabled}
+                    disabled={disabled}
                     type={type}
                     required={isRequired}
                     autoComplete={autoComplete}
