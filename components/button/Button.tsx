@@ -29,7 +29,7 @@ export default function Button({
     return <button
         disabled={disabled}
         onClick={onclick}
-        className={`${py} ${px} rounded-xl ${bgColor} ${textColor} flex justify-center items-center spaxe-x-3 hover:bg-green-600`}
+        className={`${py} ${px} rounded-xl ${bgColor} ${textColor} flex justify-center items-center spaxe-x-3`}
     >{isLoading && <LoadingIndicator />}
         {leftIcon}
         <span className={`${textColor} px-3`}>{title}</span>

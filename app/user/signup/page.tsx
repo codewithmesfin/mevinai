@@ -213,7 +213,7 @@ export default function Signup() {
                                     <div className="flex justify-center">
                                         <Button
                                             disabled={!validate.signupForm(formError) || status == "loading" || !siteNameAvailable}
-                                            bgColor={validate.signupForm(formError) && status != "loading" && siteNameAvailable ? 'border-[#1677FF] bg-[#1677FF] hover:bg-green-500 hover:border-green-500' : 'bg-gray-400'}
+                                            bgColor={!validate.signupForm(formError) || status == "loading" || !siteNameAvailable ?'bg-gray-400': 'border-[#1677FF] bg-[#1677FF] hover:bg-green-500 hover:border-green-500' }
                                             title={status == "loading" && !checkingDomainName && !checkingEmail ? 'Creating your account ...' : "Start your 7 day free trial"}
                                             isLoading={status == "loading" && !checkingDomainName && !checkingEmail}
                                             onclick={submit}
