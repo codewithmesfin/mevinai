@@ -138,7 +138,7 @@ export default function AppDetail({
                             {loading ?
                                 <CircularProgressIndicator
                                     title={installed ? `Uninstalling ${app.title}` : `Installing ${app?.title}`}
-                                    progress={Math.floor(progress)}
+                                    progress={installed ? (100 - Math.floor(progress)) : Math.floor(progress)}
                                 />
                                 : <div className='sm:flex sm:flex-row-reverse'>
                                     {app?.appName != "erpnext" && <button
