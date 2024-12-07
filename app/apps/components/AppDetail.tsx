@@ -137,7 +137,7 @@ export default function AppDetail({
                         <div className="bg-white px-4 py-3 sm:px-6">
                             {loading ?
                                 <CircularProgressIndicator
-                                    title={installed ? `Uninstalling ${app.appName}` : `Installing ${app?.appName}`}
+                                    title={installed ? `Uninstalling ${app.title}` : `Installing ${app?.title}`}
                                     progress={Math.floor(progress)}
                                 />
                                 : <div className='sm:flex sm:flex-row-reverse'>
