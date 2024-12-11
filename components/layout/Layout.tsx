@@ -37,6 +37,7 @@ const CustomLayout = ({ children }: PROPS) => {
   return authenticated ?
     <PrivateLayout>
       {children}
+      <SupportEmail />
     </PrivateLayout> :
     <>
       {!isAuthPage && <PublicNavbar />}
