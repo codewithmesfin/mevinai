@@ -6,6 +6,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Footer from './Footer';
+import SupportEmail from '../suport/SupportEmail';
+
 
 
 
@@ -39,7 +41,7 @@ const CustomLayout = ({ children }: PROPS) => {
     <>
       {!isAuthPage && <PublicNavbar />}
       {children}
-
+      <SupportEmail />
       {!isAuthPage && <Footer />}
     </>
 

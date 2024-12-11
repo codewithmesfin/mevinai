@@ -9,6 +9,10 @@ const validate = {
         let pattern = new RegExp(/^[a-zA-Z\-]+$/);
         return pattern.test(value.trim());
     },
+    fullName(name: string) {
+        const fullNameRegex = /^[A-Za-z]+[-\s][A-Za-z]+(?:[-\s][A-Za-z]+)*$/;
+        return fullNameRegex.test(name);
+    },
     email(email: string) {
         let pattern = new RegExp(
             /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -49,6 +53,17 @@ const validate = {
         var valid = false
         if (payload == null) valid = true;
         const requiredFields = ['email',  'password'];
+        const missingFields = requiredFields.filter(field => payload != undefined && payload[field]);
+        if (missingFields.length > 0) {
+            valid = false;
+        }
+        else { valid = true }
+        return valid;
+    },
+    supportForm(payload: any) {
+        var valid = false
+        if (payload == null) valid = true;
+        const requiredFields = ['fullName',  'email', 'phone','message'];
         const missingFields = requiredFields.filter(field => payload != undefined && payload[field]);
         if (missingFields.length > 0) {
             valid = false;
