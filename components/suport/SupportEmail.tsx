@@ -58,11 +58,11 @@ export default function SupportEmail() {
 
     return (
         <div>
-            <div className="cursor-pointer fixed right-5 bottom-10">
-                <div className="rounded-full p-2 bg-[#1677FF] shadow-xl text-white"
+            <div className="cursor-pointer fixed z-50 right-5 bottom-10">
+                <div className="rounded-full p-3 bg-[#1677FF] shadow-xl text-white"
                     onClick={() => setOpen(true)}
                 >
-                    <ChatBubbleOvalLeftEllipsisIcon aria-hidden="true" className="size-5 sm:size-8" />
+                    <ChatBubbleOvalLeftEllipsisIcon aria-hidden="true" className="size-8" />
                 </div>
             </div>
             <Dialog open={open} onClose={() => { }} className="relative z-10">
