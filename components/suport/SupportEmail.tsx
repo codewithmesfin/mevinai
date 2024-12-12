@@ -55,7 +55,6 @@ export default function SupportEmail() {
         }
     }
 
-
     return (
         <div>
             <div className="cursor-pointer fixed z-50 right-5 bottom-10">
@@ -172,12 +171,12 @@ export default function SupportEmail() {
                                         />
                                     </div>
                                     <button
-                                            data-autofocus
-                                            onClick={() => setOpen(false)}
-                                            className="mt-4 inline-flex w-full justify-center items-center rounded-xl bg-white px-6 py-2 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white sm:mt-0 sm:w-auto"
-                                        >
-                                            Cancel
-                                        </button>
+                                        data-autofocus
+                                        onClick={() => setOpen(false)}
+                                        className="mt-4 inline-flex w-full justify-center items-center rounded-xl bg-white px-6 py-2 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white sm:mt-0 sm:w-auto"
+                                    >
+                                        Cancel
+                                    </button>
 
                                 </div>
                             </div>

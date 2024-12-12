@@ -1,5 +1,4 @@
 import { LinkButton } from "@/components";
-import NotFound from "../not-found";
 import Link from "next/link";
 import { socials } from "@/data/aboutus";
 
