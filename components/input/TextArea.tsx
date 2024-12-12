@@ -31,7 +31,7 @@ export default function TextArea({
     min
 }: PROPS) {
     return <div>
-        <label htmlFor={type} className="block text-sm text-gray-700">
+        <label htmlFor={type} className="block text-left text-sm text-gray-700">
             {label} {isRequired && <RequiredLabel />}
         </label>
         <div className="mt-2">

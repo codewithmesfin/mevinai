@@ -32,7 +32,7 @@ export default function SupportEmail() {
         else {
             setLoading(true)
             const payload = {
-                "emails": ["sciemesfin55@gmail.com", "shibeshi156@gmail.com "],
+                "emails": ["sciemesfin55@gmail.com", "shibeshi156@gmail.com"],
                 "subject": `Customer Support - ${user?.phone}`,
                 "message": `
                         Phone Number: ${user?.phone}
@@ -41,16 +41,17 @@ export default function SupportEmail() {
                     `
             }
             api.create(payload, "/send-support-email")
-            .then(()=>{
-                show.success(`Message sent successfully.`)
-                setOpen(false)
-                setLoading(false)
-            })
-            .catch(()=>{
-                show.error(`Unable to send message. Try later`)
-                setOpen(false)
-                setLoading(false)
-            })
+                .then(() => {
+                    setUser(null)
+                    show.success(`Message sent successfully.`)
+                    setOpen(false)
+                    setLoading(false)
+                })
+                .catch(() => {
+                    show.error(`Unable to send message. Try later`)
+                    setOpen(false)
+                    setLoading(false)
+                })
         }
     }
 
@@ -159,27 +160,26 @@ export default function SupportEmail() {
                             </div>
 
                             <div className="bg-white px-4 py-3 sm:px-6">
-                                {loading ?
-                                    <LoadingIndicator />
-                                    : <div className='sm:flex justify-end md:space-x-6'>
-                                        <div>
-                                            <Button
-                                                disabled={!validate.supportForm(formError) || loading}
-                                                bgColor={!validate.supportForm(formError) || loading ? 'bg-gray-400' : 'border-[#1677FF] bg-[#1677FF] hover:bg-green-500 hover:border-green-500'}
-                                                title={loading ? 'Sending message ...' : "Send a message"}
-                                                isLoading={loading}
-                                                onclick={submit}
-                                                px="w-full"
-                                            />
-                                        </div>
-                                        <button
+                                <div className='sm:flex justify-end md:space-x-6'>
+                                    <div className='w-full sm:w-1/2'>
+                                        <Button
+                                            disabled={!validate.supportForm(formError) || loading}
+                                            bgColor={!validate.supportForm(formError) || loading ? 'bg-gray-400' : 'border-[#1677FF] bg-[#1677FF] hover:bg-green-500 hover:border-green-500'}
+                                            title={loading ? 'Sending message ...' : "Send a message"}
+                                            isLoading={loading}
+                                            onclick={submit}
+                                            px="w-full"
+                                        />
+                                    </div>
+                                    <button
                                             data-autofocus
                                             onClick={() => setOpen(false)}
-                                            className="inline-flex w-full justify-center items-center rounded-xl bg-white px-6 py-2 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white sm:mt-0 sm:w-auto"
+                                            className="mt-4 inline-flex w-full justify-center items-center rounded-xl bg-white px-6 py-2 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white sm:mt-0 sm:w-auto"
                                         >
                                             Cancel
                                         </button>
-                                    </div>}
+
+                                </div>
                             </div>
                         </DialogPanel>
                     </div>
