@@ -15,6 +15,8 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 
 export default function Signup() {
+    const [online, setOnline] = useState(false)
+
 
     const [user, setUser] = useState<any>(null)
     const [subdomainName, setSubDomainName] = useState("")
@@ -26,11 +28,18 @@ export default function Signup() {
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
+        if (typeof window !== 'undefined') setOnline(window.navigator.onLine)
+    }, [online])
+
+    useEffect(() => {
         validate.signupForm(formError)
     }, [formError])
 
     const { status } = useSelector((state: RootState) => state.user);
     const submit = async () => {
+        if (!online) {
+            show.error("You are currently offline. Please check your internet connection and try again.")
+        }
         if (!user || (!user.firstName || !user.lastName || !user.email || !user.phone || !subdomainName || !user.password)) {
             show.error("Please fill all form fields with valid information!")
         }
@@ -55,26 +64,38 @@ export default function Signup() {
 
 
     const checkIfEmailIsAvailable = async (email: string) => {
-        setCheckingEmail(true)
-        if (email) {
-            const result = await dispatch(checkEmailExistence(email));
-            if (result.type == "user/checkEmailExistence/fulfilled") {
-                setFormError({ ...formError, email: result.payload?.inuse == true ? 'This email is already in use. Try with an other email.' : undefined });
+        if (online) {
+            setCheckingEmail(true)
+            if (email) {
+                const result = await dispatch(checkEmailExistence(email));
+                if (result.type == "user/checkEmailExistence/fulfilled") {
+                    setFormError({ ...formError, email: result.payload?.inuse == true ? 'This email is already in use. Try with an other email.' : undefined });
+                }
             }
+            setCheckingEmail(false)
         }
-        setCheckingEmail(false)
+        else {
+            setFormError({ ...formError, email: 'Please check your internet connection and try again.' });
+            show.error("You are currently offline. Please check your internet connection and try again.")
+        }
     };
 
 
     const checkIfDomainIsAvailable = async (domainName: string) => {
-        setCheckingDomainName(true)
-        if (domainName) {
-            const result = await dispatch(checkDomainNameExistance(`${domainName}.mevinai.com`)); // Dispatch action to check if the email exists
-            setSiteNameAvailable(result.payload?.available == true)
-            if (result.payload?.available != true) {
-                setFormError({ ...formError, domainName: `${domainName}.mevinai.com is already taken. Try an other one.` });
+        if (online) {
+            setCheckingDomainName(true)
+            if (domainName) {
+                const result = await dispatch(checkDomainNameExistance(`${domainName}.mevinai.com`)); // Dispatch action to check if the email exists
+                setSiteNameAvailable(result.payload?.available == true)
+                if (result.payload?.available != true) {
+                    setFormError({ ...formError, domainName: `${domainName}.mevinai.com is already taken. Try an other one.` });
+                }
+                setCheckingDomainName(false)
             }
-            setCheckingDomainName(false)
+        }
+        else {
+            setFormError({ ...formError, domainName: 'Please check your internet connection and try again.' });
+            show.error("You are currently offline. Please check your internet connection and try again.")
         }
     }
 
@@ -91,9 +112,9 @@ export default function Signup() {
                                 <h2 className="text-center text-lg text-gray-700">
                                     Create a new account
                                 </h2>
-                                <Link 
-                                href={"/guide"}
-                                className="flex justify-center items-center space-x-2 border-b border-blue-600">
+                                <Link
+                                    href={"/guide"}
+                                    className="flex justify-center items-center space-x-2 border-b border-blue-600">
                                     <ArrowRightIcon aria-hidden="true" className="size-4" />
                                     <span className="text-sm text-gray-900">Guide</span>
                                 </Link>
@@ -213,7 +234,7 @@ export default function Signup() {
                                     <div className="flex justify-center">
                                         <Button
                                             disabled={!validate.signupForm(formError) || status == "loading" || !siteNameAvailable}
-                                            bgColor={!validate.signupForm(formError) || status == "loading" || !siteNameAvailable ?'bg-gray-400': 'border-[#1677FF] bg-[#1677FF] hover:bg-green-500 hover:border-green-500' }
+                                            bgColor={!validate.signupForm(formError) || status == "loading" || !siteNameAvailable ? 'bg-gray-400' : 'border-[#1677FF] bg-[#1677FF] hover:bg-green-500 hover:border-green-500'}
                                             title={status == "loading" && !checkingDomainName && !checkingEmail ? 'Creating your account ...' : "Start your 7 day free trial"}
                                             isLoading={status == "loading" && !checkingDomainName && !checkingEmail}
                                             onclick={submit}
